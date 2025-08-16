@@ -4,15 +4,13 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 .mainContainer {
   display: flex;
-  margin-top: 10px;
-   
-  
 }
 
 .link {

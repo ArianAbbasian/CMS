@@ -5,10 +5,14 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { HashRouter } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import './root.css'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HashRouter>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </HashRouter>
 );

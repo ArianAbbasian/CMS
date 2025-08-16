@@ -1,60 +1,102 @@
 .widgetSm {
-    flex: 1;
-    padding: 20px;
-    margin-right: 20px;
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  flex: 1;
+  padding: 25px;
+  margin-right: 20px;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
 }
 
 .widgetSmTitle {
-    font-size: 22px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.widgetSmTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
 }
 
 .widgetSmList {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .widgetSmListItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+}
+
+.widgetSmListItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .widgetSmImg {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+  margin-right: 15px;
 }
 
 .widgetSmUser {
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .widgetSmUserName {
-    font-weight: 600;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 3px;
+  font-size: 15px;
 }
 
 .widgetSmUserTitle {
-    font-weight: 300;
+  font-weight: 400;
+  color: var(--secondary-text);
+  font-size: 13px;
 }
 
 .widgetSmButton {
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
-    padding: 7px 10px;
-    background-color: #eeeef7;
-    color: #555;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 40px;
+  height: 40px;
+}
+
+.widgetSmButton:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
 }
 
 .widgetSmIcon {
-    font-size: 16px !important;
-    /* margin-right: 5px; */
+  font-size: 18px !important;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Visibility } from "@mui/icons-material";
 import { newMembers } from "./../../datas";
 import './WidgetSM.css'
 
@@ -10,13 +10,17 @@ export default function WidgetSm() {
       <ul className="widgetSmList">
         {newMembers.map((user) => (
           <li key={user.id} className="widgetSmListItem">
-             <img src={user.img} className="widgetSmImg" alt="alaki"/>
+            <img 
+              src={process.env.PUBLIC_URL + '/' + user.img} 
+              className="widgetSmImg" 
+              alt={user.username}
+            />
             <div className="widgetSmUser">
               <span className="widgetSmUserName">{user.username}</span>
               <span className="widgetSmUserTitle">{user.title}</span>
             </div>
-            <button className="widgetSmButton">
-              <VisibilityIcon className="widgetSmIcon" />
+            <button className="widgetSmButton" title="View profile">
+              <Visibility className="widgetSmIcon" />
             </button>
           </li>
         ))}

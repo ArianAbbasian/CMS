@@ -1,109 +1,82 @@
 import React from "react";
-import LineStyleIcon from "@mui/icons-material/LineStyle";
-import TimelineIcon from "@mui/icons-material/Timeline";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import StorefrontIcon from "@mui/icons-material/Storefront";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
-import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import ReportIcon from "@mui/icons-material/WorkOutline";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useTheme } from "../../contexts/ThemeContext";
+import {
+  LineStyle,
+  Timeline,
+  TrendingUp,
+  PermIdentity,
+  Storefront,
+  AttachMoney,
+  BarChart,
+  MailOutline,
+  DynamicFeed,
+  MessageOutlined,
 
+} from "@mui/icons-material";
 import "./Sidebar.css";
 
 export default function Sidebar() {
+  const { isDarkMode } = useTheme();
+
+  const menuItems = [
+    {
+      title: "Dashboard",
+      items: [
+        { icon: <LineStyle />, text: "Home", path: "/" },
+        { icon: <Timeline />, text: "Analytics", path: "/analytics" },
+        { icon: <TrendingUp />, text: "Sales", path: "/sales" }
+      ]
+    },
+    {
+      title: "Quick Menu",
+      items: [
+        { icon: <PermIdentity />, text: "Users", path: "/users" },
+        { icon: <PermIdentity />, text: "New User", path: "/newUser" },
+        { icon: <Storefront />, text: "Products", path: "/products" },
+        { icon: <AttachMoney />, text: "Transactions", path: "/transactions" },
+        { icon: <BarChart />, text: "Reports", path: "/reports" }
+      ]
+    },
+    {
+      title: "Notifications",
+      items: [
+        { icon: <MailOutline />, text: "Mail", path: "/mail" },
+        { icon: <DynamicFeed />, text: "Feedback", path: "/feedback" },
+        { icon: <MessageOutlined />, text: "Messages", path: "/messages" }
+      ]
+    }
+  ];
+
   return (
-    <div className="sidebar">
-        
+    <div className={`sidebar ${isDarkMode ? "dark" : "light"}`}>
       <div className="sidebarWrapper">
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
-          <ul className="sidebarList">
-            <Link to="/" className="link">
-            <li className="sidebarListItem active">
-              <LineStyleIcon className="sidebarIcon" />
-              Home
-            </li>
-            </Link>
-            <li className="sidebarListItem">
-              <TimelineIcon className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <TrendingUpIcon className="sidebarIcon" />
-              Sales
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
-          <ul className="sidebarList">
-            <Link to="/users" className="link">
-            <li className="sidebarListItem">
-              <PermIdentityIcon className="sidebarIcon" />
-              Users
-            </li>
-            </Link>
-            <Link to="/newUser" className="link">
-            <li className="sidebarListItem">
-              <PermIdentityIcon className="sidebarIcon" />
-              New User
-            </li>
-            </Link>
-            <Link to="/products" className="link">
-            <li className="sidebarListItem">
-              <StorefrontIcon className="sidebarIcon" />
-              Products
-            </li>
-            </Link>
-            <li className="sidebarListItem">
-              <AttachMoneyIcon className="sidebarIcon" />
-              Transactions
-            </li>
-            <li className="sidebarListItem">
-              <BarChartIcon className="sidebarIcon" />
-              Reports
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Notifications</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <MailOutlineIcon className="sidebarIcon" />
-              Mail
-            </li>
-            <li className="sidebarListItem">
-              <DynamicFeedIcon className="sidebarIcon" />
-              Feedback
-            </li>
-            <li className="sidebarListItem">
-              <MessageOutlinedIcon className="sidebarIcon" />
-              Messages
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <WorkOutlineIcon className="sidebarIcon" />
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              <TimelineIcon className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <ReportIcon className="sidebarIcon" />
-              Reports
-            </li>
-          </ul>
-        </div>
+        {menuItems.map((menu, index) => (
+          <div className="sidebarMenu" key={index}>
+            <h3 className="sidebarTitle">{menu.title}</h3>
+            <ul className="sidebarList">
+              {menu.items.map((item, itemIndex) => (
+                <NavLink
+                  to={item.path}
+                  className="link"
+                  key={itemIndex}
+                  end={item.path === "/"}
+                >
+                  {({ isActive }) => (
+                    <li
+                      className={`sidebarListItem ${
+                        isActive ? "active" : ""
+                      }`}
+                    >
+                      <span className="sidebarIcon">{item.icon}</span>
+                      {item.text}
+                    </li>
+                  )}
+                </NavLink>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
