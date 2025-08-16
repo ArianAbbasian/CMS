@@ -1,16 +1,29 @@
+// src/components/topBar/TopBar.jsx
 import React from "react";
 import "./Topbar.css";
-import { Notifications, Language, Settings } from "@mui/icons-material";
+import { 
+  Notifications, 
+  Language, 
+  Settings, 
+  Menu,
+  Close
+} from "@mui/icons-material";
 import { useTheme } from "../../contexts/ThemeContext";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
 
-export default function TopBar() {
+export default function TopBar({ sidebarOpen, setSidebarOpen }) {
   const { isDarkMode, toggleTheme } = useTheme();
   
   return (
-    <div className="topbar">
+    <div className={`topbar ${isDarkMode ? "dark" : ""}`}>
       <div className="topbarWrapper">
         <div className="topleft">
+          <div 
+            className="hamburgerMenu"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            {sidebarOpen ? <Close /> : <Menu />}
+          </div>
           <span className="logo">Arian ❤️</span>
         </div>
         <div className="topRight">
@@ -28,7 +41,6 @@ export default function TopBar() {
           <div 
             className="topbarIconContainer"
             onClick={toggleTheme}
-            style={{ cursor: "pointer" }}
           >
             {isDarkMode ? 
               <Brightness7 fontSize="small" /> : 

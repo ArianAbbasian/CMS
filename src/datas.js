@@ -148,7 +148,7 @@ let userRows = [
         id: 5,
         username: 'Hamze mohammadi',
         avatar: 'images/hamze.jpg',
-        status: 'active',
+        status: 'non-active ',
         transaction: '$55.98',
         email: 'amin@gmail.com'
     }

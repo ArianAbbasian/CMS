@@ -1,42 +1,49 @@
 import React from "react";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-
+import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import ArrowUpward from "@mui/icons-material/ArrowUpward";
 import "./features.css";
 
 export default function Feature() {
+  const featuresData = [
+    {
+      title: "Revenue",
+      amount: "$2,415",
+      rate: -11.4,
+      subtitle: "Compared to last month"
+    },
+    {
+      title: "Sales",
+      amount: "$4,215",
+      rate: -1.4,
+      subtitle: "Compared to last month"
+    },
+    {
+      title: "Cost",
+      amount: "$2,225",
+      rate: +2.4,
+      subtitle: "Compared to last month"
+    }
+  ];
+
   return (
     <div className="features">
-      <div className="featureItem">
-        <span className="featureTitle">Revanue</span>
-        <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
-            -11.4 <ArrowDownwardIcon className="featureIcon negative" />
-          </span>
+      {featuresData.map((feature, index) => (
+        <div className="featureItem" key={index}>
+          <span className="featureTitle">{feature.title}</span>
+          <div className="featureContainer">
+            <span className="featureMoney">{feature.amount}</span>
+            <span className="featureRate">
+              {feature.rate}
+              {feature.rate >= 0 ? (
+                <ArrowUpward className="featureIcon" />
+              ) : (
+                <ArrowDownward className="featureIcon negative" />
+              )}
+            </span>
+          </div>
+          <span className="featureSub">{feature.subtitle}</span>
         </div>
-        <span className="featureSub">Compared to last month</span>
-      </div>
-      <div className="featureItem">
-        <span className="featureTitle">Sales</span>
-        <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
-            -1.4 <ArrowDownwardIcon className="featureIcon negative" />
-          </span>
-        </div>
-        <span className="featureSub">Compared to last month</span>
-      </div>
-      <div className="featureItem">
-        <span className="featureTitle">Cost</span>
-        <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
-            +2.4 <ArrowUpwardIcon className="featureIcon" />
-          </span>
-        </div>
-        <span className="featureSub">Compared to last month</span>
-      </div>
+      ))}
     </div>
   );
 }

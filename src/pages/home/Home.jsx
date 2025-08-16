@@ -6,9 +6,6 @@ import { xAxisData } from "../../datas";
 import WidgetLg from '../../components/WidgetLg/WidgetLg'
 import "./Home.css";
 
-
-
-
 export default function Home() {
   return (
     <div className="home">

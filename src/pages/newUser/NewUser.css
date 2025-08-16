@@ -1,0 +1,281 @@
+.newUserPage {
+  padding: 20px;
+  flex: 1;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.newUserPage.dark {
+  background-color: #121826;
+  color: #e2e8f0;
+}
+
+.newUserHeader {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3a7bd5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.backButton:hover {
+  background-color: rgba(58, 123, 213, 0.1);
+}
+
+.newUserPage.dark .backButton {
+  color: #60a5fa;
+}
+
+.userForm {
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.newUserPage.dark .userForm {
+  background: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.formGroup label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.newUserPage.dark .formGroup label {
+  color: #cbd5e1;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background: #f9fafb;
+}
+
+.newUserPage.dark .formGroup input,
+.newUserPage.dark .formGroup select {
+  background: #2d3748;
+  border-color: #4b5563;
+  color: #e2e8f0;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #3a7bd5;
+  box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
+}
+
+.newUserPage.dark .formGroup input:focus,
+.newUserPage.dark .formGroup select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+.error {
+  border-color: #ef4444 !important;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 8px;
+  height: 20px;
+}
+
+.passwordInput {
+  position: relative;
+  display: flex;
+}
+
+.passwordInput input {
+  flex: 1;
+  padding-right: 45px;
+  padding-left: 50px;
+}
+
+.togglePassword {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newUserPage.dark .togglePassword {
+  color: #94a3b8;
+}
+
+.avatarPreview {
+  margin-top: 12px;
+}
+
+.avatarPreview img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3a7bd5;
+}
+
+.newUserPage.dark .avatarPreview img {
+  border-color: #60a5fa;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cancelBtn,
+.createBtn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancelBtn {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.newUserPage.dark .cancelBtn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.cancelBtn:hover {
+  background: #e5e7eb;
+}
+
+.newUserPage.dark .cancelBtn:hover {
+  background: #475569;
+}
+
+.createBtn {
+  background: #3a7bd5;
+  color: white;
+}
+
+.newUserPage.dark .createBtn {
+  background: #2563eb;
+}
+
+.createBtn:hover {
+  background: #2a6bc5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 123, 213, 0.3);
+}
+
+.newUserPage.dark .createBtn:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 992px) {
+  .formGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .userForm {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newUserHeader {
+    margin-bottom: 20px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .userForm {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .formActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cancelBtn,
+  .createBtn {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newUserPage {
+    padding: 15px;
+  }
+
+  .userForm {
+    padding: 18px;
+  }
+
+  .formGroup input,
+  .formGroup select {
+    padding: 13px 15px;
+  }
+
+  .backButton {
+    width: 36px;
+    height: 36px;
+  }
+}

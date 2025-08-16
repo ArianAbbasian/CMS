@@ -16,7 +16,7 @@ import {
 } from "@mui/icons-material";
 import "./Sidebar.css";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const { isDarkMode } = useTheme();
 
   const menuItems = [
@@ -32,7 +32,7 @@ export default function Sidebar() {
       title: "Quick Menu",
       items: [
         { icon: <PermIdentity />, text: "Users", path: "/users" },
-        { icon: <PermIdentity />, text: "New User", path: "/newUser" },
+        { icon: <PermIdentity />, text: "New User", path: "/newUsers" },
         { icon: <Storefront />, text: "Products", path: "/products" },
         { icon: <AttachMoney />, text: "Transactions", path: "/transactions" },
         { icon: <BarChart />, text: "Reports", path: "/reports" }
@@ -49,35 +49,46 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className={`sidebar ${isDarkMode ? "dark" : "light"}`}>
-      <div className="sidebarWrapper">
-        {menuItems.map((menu, index) => (
-          <div className="sidebarMenu" key={index}>
-            <h3 className="sidebarTitle">{menu.title}</h3>
-            <ul className="sidebarList">
-              {menu.items.map((item, itemIndex) => (
-                <NavLink
-                  to={item.path}
-                  className="link"
-                  key={itemIndex}
-                  end={item.path === "/"}
-                >
-                  {({ isActive }) => (
-                    <li
-                      className={`sidebarListItem ${
-                        isActive ? "active" : ""
-                      }`}
-                    >
+    <>
+      <div 
+        className={`sidebar ${isDarkMode ? "dark" : "light"} ${isOpen ? "open" : ""}`}
+        onClick={(e) => {
+          if (e.target.tagName === 'A') return;
+          onClose();
+        }}
+      >
+        <div className="sidebarWrapper">
+          {menuItems.map((menu, index) => (
+            <div className="sidebarMenu" key={index}>
+              <h3 className="sidebarTitle">{menu.title}</h3>
+              <ul className="sidebarList">
+                {menu.items.map((item, itemIndex) => (
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) => 
+                      isActive ? "link active" : "link"
+                    }
+                    key={itemIndex}
+                    end={item.path === "/"}
+                  >
+                    <li className="sidebarListItem">
                       <span className="sidebarIcon">{item.icon}</span>
                       {item.text}
                     </li>
-                  )}
-                </NavLink>
-              ))}
-            </ul>
-          </div>
-        ))}
+                  </NavLink>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      
+      {isOpen && (
+        <div 
+          className="sidebarOverlay" 
+          onClick={onClose}
+        />
+      )}
+    </>
   );
 }
