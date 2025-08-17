@@ -1,9 +1,9 @@
 import React from "react";
 import Features from "../../components/features/Feature";
-import Chart from "../../components/Chart/Chart";
-import WidgetSm from '../../components/widgetSm/WidgetSM'
+import Chart from "../../components/Charts/Chart";
+import WidgetSm from "../../components/widgets/widgetSm/WidgetSM";
 import { xAxisData } from "../../datas";
-import WidgetLg from '../../components/WidgetLg/WidgetLg'
+import WidgetLg from "../../components/widgets/WidgetLg/WidgetLg";
 import "./Home.css";
 
 export default function Home() {

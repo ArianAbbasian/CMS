@@ -1,7 +1,7 @@
 import React from "react";
 import { Visibility } from "@mui/icons-material";
-import { newMembers } from "./../../datas";
-import './WidgetSM.css'
+import { newMembers } from "./../../../datas";
+import "./WidgetSM.css";
 
 export default function WidgetSm() {
   return (
@@ -10,9 +10,9 @@ export default function WidgetSm() {
       <ul className="widgetSmList">
         {newMembers.map((user) => (
           <li key={user.id} className="widgetSmListItem">
-            <img 
-              src={process.env.PUBLIC_URL + '/' + user.img} 
-              className="widgetSmImg" 
+            <img
+              src={process.env.PUBLIC_URL + "/" + user.img}
+              className="widgetSmImg"
               alt={user.username}
             />
             <div className="widgetSmUser">

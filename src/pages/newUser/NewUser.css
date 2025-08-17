@@ -121,12 +121,13 @@
 .passwordInput {
   position: relative;
   display: flex;
+  padding-left: 50px;
 }
 
 .passwordInput input {
   flex: 1;
   padding-right: 45px;
-  padding-left: 50px;
+
 }
 
 .togglePassword {
