@@ -1,0 +1,145 @@
+.TopProductsWidget {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
+}
+
+.TopProductsHeader {
+  margin-bottom: 25px;
+}
+
+.TopProductsTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.TopProductsSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.TopProductsTableContainer {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.TopProductsTableHead {
+  background-color: var(--table-header-bg);
+}
+
+.TopProductsTableHead th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-text);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.TopProductsTableBody tr {
+  transition: background-color 0.2s ease;
+}
+
+.TopProductsTableBody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+.TopProductsTableCell {
+  padding: 16px;
+  color: var(--primary-text);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.TopProductsProductCell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.TopProductsAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.TopProductsChange {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.TopProductsChange.positive {
+  color: #3bb077;
+}
+
+.TopProductsChange.negative {
+  color: #d95087;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 992px) {
+  .TopProductsWidget {
+    padding: 20px;
+  }
+  
+  .TopProductsTableHead th,
+  .TopProductsTableCell {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TopProductsWidget {
+    padding: 15px;
+  }
+  
+  .TopProductsTitle {
+    font-size: 18px;
+  }
+  
+  .TopProductsTableHead th,
+  .TopProductsTableCell {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .TopProductsProductCell {
+    gap: 10px;
+  }
+  
+  .TopProductsAvatar {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TopProductsWidget {
+    padding: 12px;
+  }
+  
+  .TopProductsTitle {
+    font-size: 16px;
+  }
+  
+  .TopProductsSubtitle {
+    font-size: 12px;
+  }
+  
+  .TopProductsTableHead th,
+  .TopProductsTableCell {
+    padding: 8px;
+    font-size: 13px;
+  }
+}

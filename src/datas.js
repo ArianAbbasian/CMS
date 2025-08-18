@@ -240,7 +240,7 @@ const salesData = [
 ];
 
 // داده‌های دسته‌بندی محصولات
- const categoryData = [
+const categoryData = [
   { name: "Electronics", value: 35 },
   { name: "Computers", value: 25 },
   { name: "Home", value: 20 },
@@ -249,7 +249,7 @@ const salesData = [
 ];
 
 // داده‌های جغرافیایی
- const geographyData = [
+const geographyData = [
   { name: "North America", sales: 4000, revenue: 24000 },
   { name: "Europe", sales: 3000, revenue: 13980 },
   { name: "Asia", sales: 2780, revenue: 19000 },
@@ -258,17 +258,8 @@ const salesData = [
   { name: "Oceania", sales: 1490, revenue: 8500 },
 ];
 
-// داده‌های ترافیک
- const trafficData = [
-  { name: "Direct", value: 40 },
-  { name: "Search", value: 30 },
-  { name: "Social", value: 15 },
-  { name: "Email", value: 10 },
-  { name: "Referral", value: 5 },
-];
-
 // محصولات پرفروش
- const topProducts = [
+const topProducts = [
   {
     id: 1,
     name: "MacBook Pro",
@@ -311,8 +302,8 @@ const salesData = [
   },
 ];
 
-// تراکنش‌های اخیر (نسخه جدید برای Analytics)
- const recentTransactionsAnalytics = [
+// تراکنش‌های اخیر
+const recentTransactionsAnalytics = [
   {
     id: 1,
     customer: "John Doe",
@@ -363,7 +354,7 @@ const monthlyGoals = [
 ];
 
 // فعالیت‌های اخیر
- const recentActivities = [
+const recentActivities = [
   {
     id: 1,
     user: "John Doe",
@@ -407,20 +398,106 @@ const monthlyGoals = [
 ];
 
 // هشدار موجودی
-const lowStockProducts = [
-  { id: 1, name: "Wireless Headphones", stock: 8, min: 20 },
-  { id: 2, name: "Smart Watch", stock: 15, min: 25 },
-  { id: 3, name: "Bluetooth Speaker", stock: 5, min: 15 },
+export const lowStockProducts = [
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    stock: 8,
+    min: 20,
+    category: "Electronics",
+    lastOrdered: "2023-05-15",
+  },
+  {
+    id: 2,
+    name: "Smart Watch",
+    stock: 15,
+    min: 25,
+    category: "Wearables",
+    lastOrdered: "2023-06-20",
+  },
+  {
+    id: 3,
+    name: "Bluetooth Speaker",
+    stock: 5,
+    min: 15,
+    category: "Audio",
+    lastOrdered: "2023-07-10",
+  },
 ];
 
 // دسته‌بندی‌ها
- const categories = [
-  "All",
-  "Electronics",
-  "Computers",
-  "Home",
-  "Fashion",
+const categories = ["All", "Electronics", "Computers", "Home", "Fashion"];
+
+export const geographyChartData = [
+  {
+    name: "North America",
+    sales: 4000,
+    revenue: 24000,
+    fill1: "#8884d8",
+    fill2: "#82ca9d",
+    marketShare: "38%",
+  },
+  {
+    name: "Europe",
+    sales: 3000,
+    revenue: 13980,
+    fill1: "#9d84d8",
+    fill2: "#83ca9d",
+    marketShare: "28%",
+  },
+  {
+    name: "Asia",
+    sales: 2780,
+    revenue: 19000,
+    fill1: "#8470d8",
+    fill2: "#8fca9d",
+    marketShare: "26%",
+  },
+  {
+    name: "South America",
+    sales: 1890,
+    revenue: 9800,
+    fill1: "#8456d8",
+    fill2: "#9bca9d",
+    marketShare: "18%",
+  },
+  {
+    name: "Africa",
+    sales: 2390,
+    revenue: 12000,
+    fill1: "#843cd8",
+    fill2: "#a7ca9d",
+    marketShare: "22%",
+  },
+  {
+    name: "Oceania",
+    sales: 1490,
+    revenue: 8500,
+    fill1: "#8422d8",
+    fill2: "#b3ca9d",
+    marketShare: "14%",
+  },
 ];
+
+export const geographyChartMeta = {
+  title: "Regional Sales Performance",
+  description: "Sales and revenue distribution by global regions",
+  updatedAt: "2023-06-15",
+};
+
+export const trafficData = [
+  { name: "Direct", value: 40, color: "#0088FE" },
+  { name: "Search", value: 30, color: "#00C49F" },
+  { name: "Social", value: 15, color: "#FFBB28" },
+  { name: "Email", value: 10, color: "#FF8042" },
+  { name: "Referral", value: 5, color: "#8884D8" },
+];
+
+export const trafficMeta = {
+  title: "Traffic Sources",
+  description: "Distribution of website traffic sources",
+  updatedAt: "2023-06-15",
+};
 
 // صادر کردن همه داده‌ها
 export {
@@ -434,11 +511,83 @@ export {
   salesData,
   categoryData,
   geographyData,
-  trafficData,
   topProducts,
   recentTransactionsAnalytics,
   monthlyGoals,
   recentActivities,
-  lowStockProducts,
   categories,
 };
+
+export const progressGoals = [
+  {
+    id: 1,
+    name: "Monthly Sales",
+    progress: 75,
+    target: 1200,
+    type: "sales",
+    icon: "LocalMall",
+    color: "#3a7bd5",
+  },
+  {
+    id: 2,
+    name: "Revenue Target",
+    progress: 65,
+    target: 25000,
+    type: "revenue",
+    icon: "AttachMoney",
+    color: "#00b09b",
+  },
+  {
+    id: 3,
+    name: "New Customers",
+    progress: 45,
+    target: 300,
+    type: "customers",
+    icon: "People",
+    color: "#ff5e62",
+  },
+];
+
+// src/datas.js
+export const activityFeedData = [
+  {
+    id: 1,
+    user: "John Doe",
+    action: "placed a new order",
+    time: "5 minutes ago",
+    icon: "ShoppingCart",
+    color: "#3a7bd5",
+  },
+  {
+    id: 2,
+    user: "Jane Smith",
+    action: "made a payment",
+    time: "15 minutes ago",
+    icon: "Payment",
+    color: "#00d2ff",
+  },
+  {
+    id: 3,
+    user: "Robert Johnson",
+    action: "registered as a new customer",
+    time: "1 hour ago",
+    icon: "PersonAdd",
+    color: "#7d9df5",
+  },
+  {
+    id: 4,
+    user: "Emily Davis",
+    action: "updated profile information",
+    time: "2 hours ago",
+    icon: "AccountCircle",
+    color: "#ff9800",
+  },
+  {
+    id: 5,
+    user: "Admin",
+    action: "added new product",
+    time: "3 hours ago",
+    icon: "Store",
+    color: "#4caf50",
+  },
+];

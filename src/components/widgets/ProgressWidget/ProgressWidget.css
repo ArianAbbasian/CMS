@@ -1,0 +1,145 @@
+/* src/components/widgets/ProgressWidget.css */
+.ProgressWidget {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
+}
+
+.ProgressWidgetHeader {
+  margin-bottom: 25px;
+}
+
+.ProgressWidgetTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.ProgressWidgetSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.ProgressWidgetCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ProgressWidgetCard {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.ProgressWidgetCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ProgressWidgetGoal {
+  margin-bottom: 20px;
+}
+
+.ProgressWidgetGoalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ProgressWidgetGoalName {
+  font-weight: 600;
+  color: var(--primary-text);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ProgressWidgetGoalValue {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent-color);
+}
+
+.ProgressWidgetBarContainer {
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--light-grey-200);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .ProgressWidgetBarContainer {
+  background-color: var(--dark-grey-700);
+}
+
+.ProgressWidgetBar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.ProgressWidgetBar.sales {
+  background-color: #3a7bd5;
+}
+
+.ProgressWidgetBar.revenue {
+  background-color: #00b09b;
+}
+
+.ProgressWidgetBar.customers {
+  background-color: #ff5e62;
+}
+
+.ProgressWidgetGoalFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProgressWidgetGoalTarget {
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+.ProgressWidgetGoalPercentage {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+  .ProgressWidget {
+    padding: 20px;
+  }
+  
+  .ProgressWidgetTitle {
+    font-size: 18px;
+  }
+  
+  .ProgressWidgetCard {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ProgressWidget {
+    padding: 15px;
+  }
+  
+  .ProgressWidgetTitle {
+    font-size: 16px;
+  }
+  
+  .ProgressWidgetSubtitle {
+    font-size: 12px;
+  }
+}

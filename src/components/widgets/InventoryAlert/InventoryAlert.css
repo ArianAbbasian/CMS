@@ -1,4 +1,4 @@
-.WidgetLg {
+.InventoryAlert {
   flex: 1;
   padding: 25px;
   box-shadow: var(--box-shadow);
@@ -7,42 +7,43 @@
   transition: all 0.3s ease;
 }
 
-.WidgetLgHeader {
+.InventoryAlertHeader {
   margin-bottom: 25px;
 }
 
-.WidgetLgTitle {
+.InventoryAlertTitle {
   font-size: 20px;
   font-weight: 700;
   color: var(--primary-text);
   margin-bottom: 5px;
 }
 
-.WidgetLgSubtitle {
+.InventoryAlertSubtitle {
   font-size: 14px;
   color: var(--secondary-text);
 }
 
-.WidgetLgCardContainer {
+.InventoryAlertCardContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.WidgetLgCard {
+.InventoryAlertCard {
   background-color: var(--card-bg);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  border-left: 4px solid var(--warning-color);
 }
 
-.WidgetLgCard:hover {
+.InventoryAlertCard:hover {
   transform: translateY(-3px);
   box-shadow: var(--box-shadow);
 }
 
-.WidgetLgCardHeader {
+.InventoryAlertCardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,77 +52,68 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.WidgetLgUser {
+.InventoryAlertProduct {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.WidgetLgImg {
+.InventoryAlertIcon {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning-color);
+  font-size: 20px;
 }
 
-.WidgetLgUserInfo {
+.InventoryAlertProductInfo {
   display: flex;
   flex-direction: column;
 }
 
-.WidgetLgName {
+.InventoryAlertName {
   font-weight: 600;
   color: var(--primary-text);
   font-size: 16px;
 }
 
-.WidgetLgDate {
+.InventoryAlertStock {
   font-size: 13px;
   color: var(--secondary-text);
   margin-top: 3px;
 }
 
-.WidgetLgStatusBadge {
+.InventoryAlertStatusBadge {
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 13px;
   font-weight: 600;
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning-color);
 }
 
-.WidgetLgStatusBadge.Approved {
-  color: #3bb077;
-  background-color: rgba(59, 176, 119, 0.1);
-}
-
-.WidgetLgStatusBadge.Declined {
-  color: #d95087;
-  background-color: rgba(217, 80, 135, 0.1);
-}
-
-.WidgetLgStatusBadge.Pending {
-  color: #2a7ade;
-  background-color: rgba(42, 122, 222, 0.1);
-}
-
-.WidgetLgCardBody {
+.InventoryAlertCardBody {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
 }
 
-.WidgetLgDetailItem {
+.InventoryAlertDetailItem {
   display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.WidgetLgDetailLabel {
+.InventoryAlertDetailLabel {
   font-size: 12px;
   color: var(--secondary-text);
   margin-bottom: 4px;
 }
 
-.WidgetLgDetailValue {
+.InventoryAlertDetailValue {
   font-size: 14px;
   font-weight: 500;
   color: var(--primary-text);
@@ -129,65 +121,65 @@
 
 /* واکنش‌گرایی */
 @media (max-width: 992px) {
-  .WidgetLg {
+  .InventoryAlert {
     padding: 20px;
   }
   
-  .WidgetLgCardBody {
+  .InventoryAlertCardBody {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .WidgetLg {
+  .InventoryAlert {
     padding: 15px;
   }
   
-  .WidgetLgTitle {
+  .InventoryAlertTitle {
     font-size: 18px;
   }
   
-  .WidgetLgCard {
+  .InventoryAlertCard {
     padding: 15px;
   }
   
-  .WidgetLgCardBody {
+  .InventoryAlertCardBody {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .WidgetLg {
+  .InventoryAlert {
     padding: 12px;
   }
   
-  .WidgetLgTitle {
+  .InventoryAlertTitle {
     font-size: 16px;
   }
   
-  .WidgetLgSubtitle {
+  .InventoryAlertSubtitle {
     font-size: 12px;
   }
   
-  .WidgetLgCard {
+  .InventoryAlertCard {
     padding: 12px;
   }
   
-  .WidgetLgUser {
+  .InventoryAlertProduct {
     gap: 10px;
   }
   
-  .WidgetLgImg {
+  .InventoryAlertIcon {
     width: 40px;
     height: 40px;
   }
   
-  .WidgetLgName {
+  .InventoryAlertName {
     font-size: 14px;
   }
   
-  .WidgetLgDate {
+  .InventoryAlertStock {
     font-size: 12px;
   }
 }

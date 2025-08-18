@@ -1,0 +1,139 @@
+/* src/components/cards/SummaryCard.css */
+.statCard {
+  padding: 20px;
+  border-radius: 16px !important; /* افزایش شعاع گوشه‌ها */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--light-background-paper);
+  border: 1px solid var(--light-grey-300);
+  box-shadow: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* انیمیشن نرم‌تر */
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+[data-theme="dark"] .statCard {
+  background-color: var(--dark-grey-800);
+  border-color: var(--dark-grey-700);
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="dark"] .statCard::before {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statCard:hover::before {
+  opacity: 1;
+}
+
+[data-theme="dark"] .statCard:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.statIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover .statIcon {
+  transform: scale(1.05);
+}
+
+/* رنگ‌بندی آیکون‌ها */
+.statIcon.AttachMoney {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.statIcon.ShoppingCart {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.statIcon.People {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.statIcon.TrendingUp {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+}
+
+.statIcon.Store {
+  background-color: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+[data-theme="dark"] .statIcon {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-text-primary);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .statNumber {
+  color: var(--dark-text-primary);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--light-text-secondary);
+  margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .statLabel {
+  color: var(--dark-text-secondary);
+}
+
+.statChange {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.statChange.positive {
+  color: #10b981;
+}
+
+.statChange.negative {
+  color: #ef4444;
+}

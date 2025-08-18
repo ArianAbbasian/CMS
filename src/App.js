@@ -12,18 +12,10 @@ export default function App() {
 
   return (
     <div className="appContainer">
-      <Topbar 
-        sidebarOpen={sidebarOpen} 
-        setSidebarOpen={setSidebarOpen} 
-      />
+      <Topbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className="mainContent">
-        <Sidebar 
-          isOpen={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)} 
-        />
-        <div className="contentArea">
-          {router}
-        </div>
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <div className="contentArea">{router}</div>
       </div>
     </div>
   );

@@ -13,6 +13,21 @@
   --sidebar-active-bg: rgba(13, 110, 253, 0.1);
   --table-header-bg: #f8f9fa;
   --table-row-hover: rgba(0, 0, 0, 0.02);
+  --light-background-paper: #ffffff;
+  --light-primary-main: #1976d2;
+  --light-text-primary: #333333;
+  --light-text-secondary: #666666;
+  --light-grey-200: #eeeeee;
+  --light-grey-300: #e0e0e0;
+  --light-divider: #e0e0e0;
+  --light-shadow-3: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  --light-shadow-4: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  --light-secondary-main: #9c27b0;
+   --warning-color: #ff9800;
+  --warning-bg: rgba(255, 152, 0, 0.1);
+  --card-bg: var(--light-background-paper);
+  --success-color: #3bb077;
+  --error-color: #d95087;
 }
 
 [data-theme="dark"] {
@@ -29,6 +44,21 @@
   --sidebar-active-bg: rgba(125, 157, 245, 0.2);
   --table-header-bg: #2d2d2d;
   --table-row-hover: rgba(255, 255, 255, 0.02);
+  --dark-background-default: #121212;
+  --dark-primary-main: #90caf9;
+  --dark-text-primary: #f5f5f5;
+  --dark-text-secondary: #bbbbbb;
+  --dark-grey-700: #424242;
+  --dark-grey-800: #303030;
+  --dark-divider: #555555;
+  --dark-shadow-3: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  --dark-shadow-4: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  --dark-secondary-main: #ce93d8;
+  --warning-color: #ffb74d;
+  --warning-bg: rgba(255, 183, 77, 0.2);
+  --card-bg: var(--dark-grey-800);
+   --success-color: #4caf50;
+  --error-color: #f44336;
 }
 
 body {
@@ -36,7 +66,6 @@ body {
   color: var(--primary-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 h1,
 h2,
@@ -47,7 +76,6 @@ h6 {
   color: var(--primary-text);
   transition: color 0.3s ease;
 }
-
 
 a {
   color: var(--accent-color);
