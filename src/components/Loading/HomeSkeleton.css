@@ -1,0 +1,85 @@
+/* src/components/Loading/HomeSkeleton.css */
+.skeleton-container {
+  padding: 20px;
+  min-height: 100vh; /* اضافه شده */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skeleton-header {
+  height: 40px;
+  background-color: var(--border-color);
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.skeleton-stat-card {
+  height: 100px;
+  background-color: var(--border-color);
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex-grow: 1; /* اضافه شده */
+}
+
+.skeleton-table,
+.skeleton-chart {
+  background-color: var(--border-color);
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+  min-height: 300px;
+}
+
+/* بخش جدید برای پایین صفحه */
+.skeleton-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: auto; /* مهم: باعث می‌شود به پایین بچسبد */
+}
+
+.skeleton-footer-item {
+  height: 80px;
+  background-color: var(--border-color);
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 1200px) {
+  .skeleton-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skeleton-main-content,
+  .skeleton-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .skeleton-stat-card {
+    height: 80px;
+  }
+}

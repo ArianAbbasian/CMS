@@ -1,0 +1,266 @@
+.newProductContainer {
+  padding: 20px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  min-height: calc(100vh - 60px);
+}
+
+/* استایل دکمه بازگشت */
+.newUserHeader {
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.backButtonContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  margin-right: 15px;
+  font-size: 48px;
+}
+
+.backButton:hover {
+  background-color: var(--box-shadow);
+  transform: translateX(-3px);
+}
+
+.backButton:active {
+  transform: translateX(-3px) scale(0.95);
+}
+
+.backButton svg {
+  font-size: 2.5rem;
+}
+
+/* استایل کلی فرم */
+.formContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* بخش آپلود تصویر */
+.imageUploadSection {
+  background-color: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.imageUploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.imagePreview {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.imagePlaceholder {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--primary-bg);
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  color: var(--secondary-text);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.uploadLabel:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* بخش اطلاعات محصول */
+.formSection {
+  background-color: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--primary-text);
+}
+
+.icon {
+  color: var(--accent-color);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+.formGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* دکمه‌های اقدام */
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  
+}
+
+.cancelButton {
+  padding: 12px 25px;
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: var(--box-shadow);
+}
+
+.cancelButton:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--box-shadow);
+}
+
+.submitButton:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* حالت تاریک */
+.dark .imagePlaceholder {
+  background-color: var(--dark-grey-800);
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .newProductContainer {
+    padding: 15px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .backButton span {
+    display: none;
+  }
+
+  .backButton {
+    padding: 10px;
+    border-radius: 50%;
+  }
+}

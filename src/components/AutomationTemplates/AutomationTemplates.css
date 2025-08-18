@@ -1,0 +1,178 @@
+.TemplatesContainer {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
+}
+
+.TemplatesHeader {
+  margin-bottom: 25px;
+}
+
+.TemplatesTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.TemplatesSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.TemplatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.TemplateCard {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.TemplateCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.TemplateHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.TemplateIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.TemplateName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 0;
+}
+
+.TemplateDescription {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.TemplateMeta {
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.MetaItem {
+  margin-bottom: 12px;
+}
+
+.MetaItem:last-child {
+  margin-bottom: 0;
+}
+
+.MetaLabel {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.MetaValue {
+  font-size: 14px;
+  color: var(--primary-text);
+}
+
+.ActionsList {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.ActionItem {
+  font-size: 14px;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.ActionBullet {
+  color: var(--accent-color);
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.UseTemplateButton {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.UseTemplateButton:hover {
+  scale: 1.1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .TemplatesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .TemplatesContainer {
+    padding: 20px;
+  }
+  
+  .TemplateCard {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TemplatesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .TemplatesHeader {
+    margin-bottom: 20px;
+  }
+  
+  .TemplatesTitle {
+    font-size: 18px;
+  }
+}

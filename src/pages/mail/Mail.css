@@ -1,0 +1,57 @@
+/* Mail.css */
+.mail-page {
+  padding: 20px;
+  background-color: var(--secondary-bg);
+  min-height: calc(100vh - 60px);
+}
+
+.mail-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .mail-container {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .mail-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .mail-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .mail-sidebar > * {
+    flex: 1 1 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mail-page {
+    padding: 15px;
+  }
+  
+  .mail-sidebar > * {
+    flex: 1 1 100%;
+  }
+}

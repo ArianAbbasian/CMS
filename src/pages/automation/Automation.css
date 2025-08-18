@@ -1,0 +1,55 @@
+/* Automation.css */
+.automation-page {
+  padding: 0 20px 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.tabs-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 0 20px;
+  margin-top: -10px;
+  box-shadow: var(--card-shadow);
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: var(--secondary-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.tabs button.active {
+  color: var(--accent-color);
+}
+
+.tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 3px 3px 0 0;
+}
+
+.tabs button:hover:not(.active) {
+  color: var(--accent-color);
+}
+
+.automation-content {
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+}

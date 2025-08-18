@@ -24,7 +24,7 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }) {
           >
             {sidebarOpen ? <Close /> : <Menu />}
           </div>
-          <span className="logo">Arian ❤️</span>
+          <span className="logo">Arian Abbasian ❤️</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">

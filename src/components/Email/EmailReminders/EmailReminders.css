@@ -1,0 +1,227 @@
+/* EmailReminders.css */
+.reminders-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.reminders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-text);
+}
+
+.header-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.header-icon {
+  color: var(--accent-color);
+}
+
+.add-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+}
+
+.reminder-form {
+  background: var(--primary-bg);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.reminder-form input[type="text"],
+.reminder-form input[type="date"],
+.reminder-form input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--primary-text);
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.notification-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.add-button-form,
+.update-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reminder-item {
+  background: var(--primary-bg);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.reminder-item.completed {
+  opacity: 0.7;
+}
+
+.reminder-item.completed .reminder-title {
+  text-decoration: line-through;
+  color: var(--secondary-text);
+}
+
+.reminder-main {
+  display: flex;
+  gap: 12px;
+}
+
+.complete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--success-color);
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.reminder-content {
+  flex-grow: 1;
+}
+
+.reminder-title {
+  font-weight: 500;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.reminder-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+}
+
+.time-icon {
+  font-size: 1rem !important;
+}
+
+.notification-badge {
+  background: var(--accent-color);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.reminder-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.edit-button {
+  color: var(--accent-color);
+}
+
+.edit-button:hover {
+  background: rgba(13, 110, 253, 0.1);
+}
+
+.delete-button {
+  color: var(--error-color);
+}
+
+.delete-button:hover {
+  background: rgba(217, 80, 135, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reminder-main {
+    flex-direction: column;
+  }
+  
+  .reminder-actions {
+    justify-content: flex-end;
+  }
+}

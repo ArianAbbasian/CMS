@@ -405,7 +405,7 @@ export const lowStockProducts = [
     stock: 8,
     min: 20,
     category: "Electronics",
-    lastOrdered: "2023-05-15",
+    lastOrdered: "2025-05-15",
   },
   {
     id: 2,
@@ -413,7 +413,7 @@ export const lowStockProducts = [
     stock: 15,
     min: 25,
     category: "Wearables",
-    lastOrdered: "2023-06-20",
+    lastOrdered: "2025-06-20",
   },
   {
     id: 3,
@@ -421,7 +421,7 @@ export const lowStockProducts = [
     stock: 5,
     min: 15,
     category: "Audio",
-    lastOrdered: "2023-07-10",
+    lastOrdered: "2025-07-10",
   },
 ];
 
@@ -482,7 +482,7 @@ export const geographyChartData = [
 export const geographyChartMeta = {
   title: "Regional Sales Performance",
   description: "Sales and revenue distribution by global regions",
-  updatedAt: "2023-06-15",
+  updatedAt: "2025-06-15",
 };
 
 export const trafficData = [
@@ -496,7 +496,7 @@ export const trafficData = [
 export const trafficMeta = {
   title: "Traffic Sources",
   description: "Distribution of website traffic sources",
-  updatedAt: "2023-06-15",
+  updatedAt: "2025-06-15",
 };
 
 // صادر کردن همه داده‌ها
@@ -590,4 +590,206 @@ export const activityFeedData = [
     icon: "Store",
     color: "#4caf50",
   },
+];
+
+export const newUserInitialData = {
+  username: "",
+  email: "",
+  status: "active",
+  transaction: "",
+  password: "",
+  avatar: "",
+};
+
+export const newUserFormConfig = [
+  {
+    id: "username",
+    label: "Username *",
+    type: "text",
+    placeholder: "Enter username",
+    required: true,
+  },
+  {
+    id: "email",
+    label: "Email *",
+    type: "email",
+    placeholder: "example@domain.com",
+    required: true,
+  },
+  {
+    id: "password",
+    label: "Password *",
+    type: "password",
+    placeholder: "••••••",
+    required: true,
+  },
+  {
+    id: "transaction",
+    label: "Transaction amount ($)",
+    type: "number",
+    placeholder: "0.00",
+  },
+  {
+    id: "status",
+    label: "Account status",
+    type: "select",
+    options: [
+      { value: "active", label: "Active" },
+      { value: "non-active", label: "Disabled" },
+    ],
+  },
+  {
+    id: "avatar",
+    label: "Avatar link",
+    type: "text",
+    placeholder: "https://example.com/avatar.jpg",
+  },
+];
+
+export const transactionsStats = [
+  {
+    title: "Total Revenue",
+    value: "$24,265",
+    change: "+12.4%",
+    icon: "AttachMoney",
+    color: "#4CAF50",
+  },
+  {
+    title: "Total Transactions",
+    value: "1,235",
+    change: "+8.2%",
+    icon: "ShoppingCart",
+    color: "#2196F3",
+  },
+  {
+    title: "Successful",
+    value: "1,189",
+    change: "+5.3%",
+    icon: "CheckCircle",
+    color: "#8BC34A",
+  },
+  {
+    title: "Avg. Value",
+    value: "$89.50",
+    change: "+3.7%",
+    icon: "TrendingUp",
+    color: "#FFC107",
+  },
+];
+
+export const recentTransactionsData = [
+  { name: "Jan", transactions: 120 },
+  { name: "Feb", transactions: 98 },
+  { name: "Mar", transactions: 150 },
+  { name: "Apr", transactions: 110 },
+  { name: "May", transactions: 180 },
+  { name: "Jun", transactions: 200 },
+];
+
+export const chartColors = {
+  light: {
+    barFill: "#8884d8",
+    text: "#333",
+    gridStroke: "#eee",
+    tooltipBg: "#fff",
+  },
+  dark: {
+    barFill: "#7d9df5",
+    text: "#f5f5f5",
+    gridStroke: "#444",
+    tooltipBg: "#2a3042",
+  },
+};
+
+export const paymentMethodsData = [
+  { name: "Credit Card", value: 45 },
+  { name: "PayPal", value: 30 },
+  { name: "Bank Transfer", value: 15 },
+  { name: "Other", value: 10 },
+];
+
+export const paymentColors = {
+  light: {
+    colors: ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"],
+    text: "#333",
+    tooltipBg: "#fff",
+  },
+  dark: {
+    colors: ["#7d9df5", "#4db6ac", "#ffb74d", "#ff8a65"],
+    text: "#f5f5f5",
+    tooltipBg: "#2a3042",
+  },
+};
+
+export const automationTemplates = [
+  {
+    id: 1,
+    title: "Abandoned Cart Recovery",
+    description: "Send reminder email after 24 hours",
+    trigger: "Abandoned cart",
+    actions: ["Send email", "Send 10% discount code"],
+    icon: "ShoppingCart",
+    color: "#3a7bd5"
+  },
+  {
+    id: 2,
+    title: "New User Welcome",
+    description: "Send welcome email after signup",
+    trigger: "User registration",
+    actions: ["Send email", "Add to mailing list"],
+    icon: "PersonAdd",
+    color: "#00b09b"
+  },
+  {
+    id: 3,
+    title: "Low Stock Alert",
+    description: "Notify when inventory drops below 10",
+    trigger: "Inventory level",
+    actions: ["Send notification", "Create purchase order"],
+    icon: "Inventory",
+    color: "#ff5e62"
+  }
+];
+
+// ایمیل‌ها
+export const emails = [
+  {
+    id: 1,
+    from: "support@company.com",
+    subject: "Your recent order",
+    body: "Thank you for your purchase...",
+    date: "2025-06-15 14:30",
+    read: false,
+    labels: ["important", "inbox"],
+    starred: true,
+    hasAttachment: true
+  },
+  {
+    id: 2,
+    from: "newsletter@service.com",
+    subject: "Weekly updates",
+    body: "Here's what's new this week...",
+    date: "2025-06-14 09:15",
+    read: true,
+    labels: ["newsletter"],
+    starred: false,
+    hasAttachment: false
+  }
+];
+
+// برچسب‌ها
+export const emailLabels = [
+  { id: 1, name: "inbox", color: "#3a7bd5" },
+  { id: 2, name: "important", color: "#ff5e62" },
+  { id: 3, name: "personal", color: "#00b09b" }
+];
+
+// قالب‌های پاسخ خودکار
+export const autoReplies = [
+  {
+    id: 1,
+    name: "Out of Office",
+    subject: "Auto: Away from office",
+    body: "I'm currently out of office..."
+  }
 ];

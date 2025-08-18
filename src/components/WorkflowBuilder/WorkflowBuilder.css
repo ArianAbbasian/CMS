@@ -1,0 +1,254 @@
+/* WorkflowBuilder.css */
+.WorkflowBuilder {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.WorkflowName {
+  margin-bottom: 25px;
+}
+
+.WorkflowInput {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-size: 1rem;
+}
+
+.WorkflowInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+.RemoveButton {
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.RemoveButton:hover {
+  color: var(--error-color);
+  background-color: rgba(217, 80, 135, 0.1);
+}
+
+.ActionContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.ActionsSequence {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.SelectedItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.WorkflowHeader {
+  margin-bottom: 25px;
+}
+
+.WorkflowTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.WorkflowSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.BuilderContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.BuilderPanel {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.PanelTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.DraggableItem {
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.DraggableItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.WorkflowArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.DropZone {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 120px;
+  border: 2px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-text);
+  transition: all 0.3s ease;
+}
+
+.DropZone.active {
+  border-color: var(--accent-color);
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.EmptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-text);
+}
+
+.SelectedItem {
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.ActionStep {
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.StepNumber {
+  background-color: var(--accent-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.SaveButton {
+  align-self: flex-end;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: 0.4s;
+}
+
+.SaveButton:hover {
+  scale: 1.1;
+}
+
+.SaveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .BuilderContainer {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .WorkflowBuilder {
+    padding: 20px;
+  }
+
+  .BuilderContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .BuilderPanel {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .WorkflowBuilder {
+    padding: 15px;
+  }
+
+  .WorkflowTitle {
+    font-size: 18px;
+  }
+
+  .DraggableItem,
+  .SelectedItem,
+  .ActionStep {
+    padding: 10px 12px;
+  }
+}

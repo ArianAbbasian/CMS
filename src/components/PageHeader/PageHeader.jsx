@@ -7,6 +7,7 @@ import {
   HomeIcon,
   PersonAdd,
   ShoppingBagIcon,
+  AutoAwesome
 } from "@mui/icons-material";
 import "./PageHeader.css";
 

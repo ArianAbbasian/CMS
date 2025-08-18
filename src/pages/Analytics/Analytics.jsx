@@ -1,7 +1,7 @@
 import React from "react";
 import GeographyChart from "../../components/Charts/GeographyChart/GeographyChart";
 import TrafficChart from "../../components/Charts/TrafficChart/TrafficChart";
-import TopProductsTable from "../../components/tables/TopProductsTable";
+import TopProductsTable from "../../components/tables/TopProductsTable/TopProductsTable";
 import WidgetLg from "../../components/widgets/WidgetLg/WidgetLg";
 import ProgressWidget from "../../components/widgets/ProgressWidget/ProgressWidget";
 import ActivityFeed from "../../components/widgets/ActivityFeed/ActivityFeed";
@@ -14,7 +14,6 @@ import "./Analytics.css";
 export default function Analytics() {
   return (
     <div className="analytics">
-      {/* هدر صفحه */}
       <PageHeader
         title="Analytics Dashboard"
         description="Business performance overview"

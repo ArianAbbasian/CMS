@@ -95,7 +95,7 @@
 }
 
 .widgetSmButton:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--secondary-text);
   transform: scale(1.05);
 }
 

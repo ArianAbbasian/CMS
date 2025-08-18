@@ -4,17 +4,16 @@ import { useTheme } from "../../contexts/ThemeContext";
 import {
   LineStyle,
   Timeline,
-  TrendingUp,
   PermIdentity,
   Storefront,
   AttachMoney,
   MailOutline,
   DynamicFeed,
   MessageOutlined,
-
+  AutoAwesome,
 } from "@mui/icons-material";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'; 
-import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import "./Sidebar.css";
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -26,35 +25,45 @@ export default function Sidebar({ isOpen, onClose }) {
       items: [
         { icon: <LineStyle />, text: "Home", path: "/" },
         { icon: <Timeline />, text: "Analytics", path: "/analytics" },
-        { icon: <TrendingUp />, text: "Sales", path: "/sales" }
-      ]
+        { icon: <AutoAwesome />, text: "Automation Hub", path: "/automation" },
+      ],
     },
     {
       title: "Quick Menu",
       items: [
         { icon: <PermIdentity />, text: "Users", path: "/users" },
-        { icon: <PersonAddOutlinedIcon />, text: "New User", path: "/newUsers" },
+        {
+          icon: <PersonAddOutlinedIcon />,
+          text: "New User",
+          path: "/newUsers",
+        },
         { icon: <Storefront />, text: "Products", path: "/products" },
-        { icon: <AddCircleOutlineIcon />, text: "New Product", path: "/newProduct" },
-        { icon: <AttachMoney />, text: "Transactions", path: "/transactions" },
-      ]
+        {
+          icon: <AddCircleOutlineIcon />,
+          text: "New Product",
+          path: "/newProduct",
+        },
+        { icon: <AttachMoney />, text: "Transactions", path: "/transActions" },
+      ],
     },
     {
       title: "Notifications",
       items: [
         { icon: <MailOutline />, text: "Mail", path: "/mail" },
         { icon: <DynamicFeed />, text: "Feedback", path: "/feedback" },
-        { icon: <MessageOutlined />, text: "Messages", path: "/messages" }
-      ]
-    }
+        { icon: <MessageOutlined />, text: "Messages", path: "/messages" },
+      ],
+    },
   ];
 
   return (
     <>
-      <div 
-        className={`sidebar ${isDarkMode ? "dark" : "light"} ${isOpen ? "open" : ""}`}
+      <div
+        className={`sidebar ${isDarkMode ? "dark" : "light"} ${
+          isOpen ? "open" : ""
+        }`}
         onClick={(e) => {
-          if (e.target.tagName === 'A') return;
+          if (e.target.tagName === "A") return;
           onClose();
         }}
       >
@@ -66,7 +75,7 @@ export default function Sidebar({ isOpen, onClose }) {
                 {menu.items.map((item, itemIndex) => (
                   <NavLink
                     to={item.path}
-                    className={({ isActive }) => 
+                    className={({ isActive }) =>
                       isActive ? "link active" : "link"
                     }
                     key={itemIndex}
@@ -83,13 +92,8 @@ export default function Sidebar({ isOpen, onClose }) {
           ))}
         </div>
       </div>
-      
-      {isOpen && (
-        <div 
-          className="sidebarOverlay" 
-          onClick={onClose}
-        />
-      )}
+
+      {isOpen && <div className="sidebarOverlay" onClick={onClose} />}
     </>
   );
 }

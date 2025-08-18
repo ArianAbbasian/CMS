@@ -1,0 +1,157 @@
+/* ExecutionLogs.css */
+.ExecutionLogs {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
+}
+
+.LogsHeader {
+  margin-bottom: 25px;
+}
+
+.LogsTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.LogsSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.LogsTableContainer {
+  overflow-x: auto;
+}
+
+.LogsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.TableHeaderRow {
+  background-color: var(--table-header-bg);
+}
+
+.TableHeader {
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-text);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.TableRow {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.TableRow:last-child {
+  border-bottom: none;
+}
+
+.TableRow:hover {
+  background-color: var(--table-row-hover);
+}
+
+.TableCell {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: var(--primary-text);
+  cursor: pointer;
+}
+
+.workflow-cell {
+  font-weight: 500;
+}
+
+.status-cell {
+  min-width: 120px;
+}
+
+.StatusBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.StatusBadge.success {
+  background-color: rgba(59, 176, 119, 0.1);
+  color: var(--success-color);
+}
+
+.StatusBadge.error {
+  background-color: rgba(217, 80, 135, 0.1);
+  color: var(--error-color);
+}
+
+.StatusBadge.pending {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning-color);
+}
+
+.status-icon {
+  font-size: 16px !important;
+}
+
+.time-cell {
+  white-space: nowrap;
+}
+
+.details-cell {
+  color: var(--secondary-text);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .ExecutionLogs {
+    padding: 20px;
+  }
+  
+  .TableHeader, .TableCell {
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ExecutionLogs {
+    padding: 15px;
+  }
+  
+  .LogsTitle {
+    font-size: 18px;
+  }
+  
+  .TableHeader {
+    font-size: 13px;
+  }
+  
+  .TableCell {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+  
+  .StatusBadge {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .triggered-cell, .time-cell {
+    display: none;
+  }
+}

@@ -1,27 +1,30 @@
-.newUserPage {
-  padding: 20px;
-  flex: 1;
-  min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
-}
 
-.newUserPage.dark {
-  background-color: #121826;
-  color: #e2e8f0;
+.newUserContainer {
+  flex: 1;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  background-color: var(--secondary-bg);
+  transition: all 0.3s ease;
 }
 
 .newUserHeader {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  display: flex;
+
+}
+
+.backButtonContainer {
   display: flex;
   align-items: center;
-  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .backButton {
   background: none;
   border: none;
   cursor: pointer;
-  color: #3a7bd5;
+  color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,31 +32,24 @@
   height: 40px;
   border-radius: 50%;
   transition: all 0.3s;
+  margin-right: 15px;
+  font-size: 48px;
 }
 
 .backButton:hover {
-  background-color: rgba(58, 123, 213, 0.1);
+  background-color: var(--box-shadow);
+  transform: translateX(-3px);
 }
 
-.newUserPage.dark .backButton {
-  color: #60a5fa;
+.backButton:active {
+  transform: translateX(-3px) scale(0.95);
 }
 
-.userForm {
-  max-width: 1200px;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
+.backButton svg {
+  font-size: 2.5rem;
 }
 
-.newUserPage.dark .userForm {
-  background: #1e293b;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-}
-
-.formGrid {
+.newUserForm {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
@@ -63,48 +59,31 @@
 .formGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .formGroup label {
   margin-bottom: 10px;
   font-weight: 600;
   font-size: 15px;
-  color: #4b5563;
-}
-
-.newUserPage.dark .formGroup label {
-  color: #cbd5e1;
+  color: var(--secondary-text);
 }
 
 .formGroup input,
 .formGroup select {
   padding: 14px 16px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   font-size: 16px;
   transition: all 0.3s;
-  background: #f9fafb;
-}
-
-.newUserPage.dark .formGroup input,
-.newUserPage.dark .formGroup select {
-  background: #2d3748;
-  border-color: #4b5563;
-  color: #e2e8f0;
+  background-color: var(--card-bg);
 }
 
 .formGroup input:focus,
 .formGroup select:focus {
   outline: none;
-  border-color: #3a7bd5;
-  box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
-}
-
-.newUserPage.dark .formGroup input:focus,
-.newUserPage.dark .formGroup select:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.2);
 }
 
 .error {
@@ -115,37 +94,26 @@
   color: #ef4444;
   font-size: 14px;
   margin-top: 8px;
-  height: 20px;
 }
 
 .passwordInput {
   position: relative;
-  display: flex;
-  padding-left: 50px;
 }
 
 .passwordInput input {
-  flex: 1;
+  width: 100%;
   padding-right: 45px;
-
 }
 
 .togglePassword {
   position: absolute;
-  left: 12px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.newUserPage.dark .togglePassword {
-  color: #94a3b8;
+  color: var(--secondary-text);
 }
 
 .avatarPreview {
@@ -157,11 +125,7 @@
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #3a7bd5;
-}
-
-.newUserPage.dark .avatarPreview img {
-  border-color: #60a5fa;
+  border: 2px solid var(--accent-color);
 }
 
 .formActions {
@@ -180,103 +144,73 @@
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .cancelBtn {
-  background: #f3f4f6;
-  color: #4b5563;
-}
-
-.newUserPage.dark .cancelBtn {
-  background: #334155;
-  color: #e2e8f0;
-}
-
-.cancelBtn:hover {
-  background: #e5e7eb;
-}
-
-.newUserPage.dark .cancelBtn:hover {
-  background: #475569;
+  background-color: var(--border-color);
+  color: var(--primary-text);
 }
 
 .createBtn {
-  background: #3a7bd5;
+  background-color: var(--accent-color);
   color: white;
 }
 
-.newUserPage.dark .createBtn {
-  background: #2563eb;
-}
-
 .createBtn:hover {
-  background: #2a6bc5;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(58, 123, 213, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--accent-color), 0.3);
 }
 
-.newUserPage.dark .createBtn:hover {
-  background: #1d4ed8;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-}
-
+/* واکنش‌گرایی */
 @media (max-width: 992px) {
-  .formGrid {
+  .newUserForm {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
   }
-
-  .userForm {
-    padding: 25px;
+  
+  .newUserContainer {
+    padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .newUserHeader {
-    margin-bottom: 20px;
-  }
-
-  .formGrid {
+  .newUserForm {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-
-  .userForm {
-    padding: 20px;
-    border-radius: 12px;
+  
+  .newUserContainer {
+    padding: 15px;
   }
-
+  
   .formActions {
     flex-direction: column;
-    gap: 12px;
   }
-
+  
   .cancelBtn,
   .createBtn {
     width: 100%;
-    padding: 14px;
   }
 }
 
-@media (max-width: 480px) {
-  .newUserPage {
-    padding: 15px;
-  }
-
-  .userForm {
-    padding: 18px;
-  }
-
-  .formGroup input,
-  .formGroup select {
-    padding: 13px 15px;
-  }
-
-  .backButton {
-    width: 36px;
-    height: 36px;
-  }
+.formGroup input,
+.formGroup select {
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: var(--card-bg);
+  color: var(--primary-text); 
 }
+
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: var(--box-shadowc);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+

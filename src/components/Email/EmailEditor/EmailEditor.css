@@ -1,0 +1,61 @@
+/* EmailEditor.css */
+.email-editor {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.editor-header {
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.email-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.email-body {
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  resize: vertical;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.send-button, .attach-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.send-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+}
+
+.attach-button {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--border-color);
+}

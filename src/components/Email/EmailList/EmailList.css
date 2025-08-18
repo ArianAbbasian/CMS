@@ -1,0 +1,52 @@
+/* EmailList.css */
+.email-list {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+.email-item {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.email-item:hover {
+  background: var(--table-row-hover);
+}
+
+.email-item.unread {
+  font-weight: 600;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.email-star {
+  color: var(--warning-color);
+  margin-right: 10px;
+}
+
+.email-from {
+  flex-grow: 1;
+  color: var(--primary-text);
+}
+
+.email-date {
+  color: var(--secondary-text);
+  font-size: 0.8rem;
+}
+
+.email-subject {
+  color: var(--primary-text);
+}
+
+.email-attachment {
+  margin-left: 10px;
+  color: var(--secondary-text);
+}
