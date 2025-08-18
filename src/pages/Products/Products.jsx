@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { products as initialProducts } from "../../datas";
 import { Link } from "react-router-dom";
+import PageHeader from "../../components/PageHeader/PageHeader";
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import {
   DeleteOutline,
   Search,
@@ -231,12 +233,16 @@ export default function Products() {
   return (
     <div className={`productsPage ${isDarkMode ? "dark" : "light"}`}>
       <div className="productsHeader">
-        <h2 className="productsTitle">Product Management</h2>
+        <PageHeader
+        title="Product Management"
+        description="Manage your product inventory and listings"
+        descriptionIcon={<ShoppingBagIcon className="description-icon" />}
+        showTimeFilters={false}
+      />
         <div className="productsActions">
           <Link to="/newProduct" className="link">
             <button className="addProductBtn">
               <Add />
-              <span>Add New Product</span>
             </button>
           </Link>
         </div>

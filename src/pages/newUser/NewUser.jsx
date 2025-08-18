@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
-import { Visibility, VisibilityOff, ArrowBack } from "@mui/icons-material";
+import {
+  Visibility,
+  VisibilityOff,
+  ArrowBack,
+  PersonAdd,
+} from "@mui/icons-material";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import "./NewUser.css";
 
 export default function NewUser() {
@@ -68,7 +74,12 @@ export default function NewUser() {
         <button className="backButton" onClick={() => navigate("/users")}>
           <ArrowBack />
         </button>
-        <h1>Create a New user</h1>
+        <PageHeader
+          title="Add New User"
+          description="Register a new user to the system"
+          descriptionIcon={<PersonAdd className="description-icon" />}
+          showTimeFilters={false}
+        />
       </div>
 
       <form onSubmit={handleSubmit} className="userForm">

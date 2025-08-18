@@ -7,20 +7,50 @@ import ProgressWidget from "../../components/widgets/ProgressWidget/ProgressWidg
 import ActivityFeed from "../../components/widgets/ActivityFeed/ActivityFeed";
 import InventoryAlert from "../../components/widgets/InventoryAlert/InventoryAlert";
 import SummaryCard from "../../components/cards/SummaryCard";
+import PageHeader from "../../components/PageHeader/PageHeader";
+import { TrendingUp as TrendingUpIcon } from "@mui/icons-material";
 import "./Analytics.css";
 
 export default function Analytics() {
   return (
     <div className="analytics">
-      {/* ردیف کارت‌های خلاصه */}
+      {/* هدر صفحه */}
+      <PageHeader
+        title="Analytics Dashboard"
+        description="Business performance overview"
+        descriptionIcon={<TrendingUpIcon className="description-icon" />}
+        showTimeFilters={true}
+      />
+
+      {/* کارت‌های خلاصه */}
       <div className="analytics-summary-cards">
-        <SummaryCard title="Total Sales" value="$24,780" change="+12%" icon="AttachMoney" />
-        <SummaryCard title="New Users" value="1,254" change="+8%" icon="People" />
-        <SummaryCard title="Orders" value="845" change="-2%" icon="ShoppingCart" />
-        <SummaryCard title="Inventory" value="1,284" change="+5%" icon="Store" />
+        <SummaryCard
+          title="Total Sales"
+          value="$24,780"
+          change="+12%"
+          icon="AttachMoney"
+        />
+        <SummaryCard
+          title="New Users"
+          value="1,254"
+          change="+8%"
+          icon="People"
+        />
+        <SummaryCard
+          title="Orders"
+          value="845"
+          change="-2%"
+          icon="ShoppingCart"
+        />
+        <SummaryCard
+          title="Inventory"
+          value="1,284"
+          change="+5%"
+          icon="Store"
+        />
       </div>
 
-      {/* ردیف چارت‌ها */}
+      {/* چارت‌ها */}
       <div className="analytics-charts">
         <div className="chart-item">
           <GeographyChart />
@@ -30,7 +60,7 @@ export default function Analytics() {
         </div>
       </div>
 
-      {/* ردیف ویجت‌ها */}
+      {/* ویجت‌ها */}
       <div className="analytics-widgets">
         <div className="main-widgets">
           <div className="widget-content">

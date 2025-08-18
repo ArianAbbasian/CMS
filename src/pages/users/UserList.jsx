@@ -9,9 +9,11 @@ import {
   Edit,
   Add,
   Person,
+  People,
 } from "@mui/icons-material";
 import { useTheme } from "../../contexts/ThemeContext";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import "./UserList.css";
 
 export default function UserList() {
@@ -170,30 +172,30 @@ export default function UserList() {
       ),
     },
     {
-  field: "action",
-  headerName: "Actions",
-  minWidth: 120, 
-  headerAlign: 'center',
-  align: 'center',
-  renderCell: (params) => {
-    return (
-      <div className="actionCell">
-        <Link to={`/user/${params.row.id}`} className="link">
-          <button className="userListEdit" title="Edit">
-            <Edit fontSize="small" />
-          </button>
-        </Link>
-        <button 
-          className="userListDelete"
-          onClick={() => userDelete(params.row.id)}
-          title="Delete"
-        >
-          <DeleteOutline fontSize="small" />
-        </button>
-      </div>
-    );
-  },
-},
+      field: "action",
+      headerName: "Actions",
+      minWidth: 120,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => {
+        return (
+          <div className="actionCell">
+            <Link to={`/user/${params.row.id}`} className="link">
+              <button className="userListEdit" title="Edit">
+                <Edit fontSize="small" />
+              </button>
+            </Link>
+            <button
+              className="userListDelete"
+              onClick={() => userDelete(params.row.id)}
+              title="Delete"
+            >
+              <DeleteOutline fontSize="small" />
+            </button>
+          </div>
+        );
+      },
+    },
   ];
 
   // Calculate total transactions
@@ -207,7 +209,12 @@ export default function UserList() {
   return (
     <div className={`userList ${isDarkMode ? "dark" : "light"}`}>
       <div className="userListHeader">
-        <h2 className="userListTitle">User Management</h2>
+        <PageHeader
+          title="User Management"
+          description="View and manage all system users"
+          descriptionIcon={<People className="description-icon" />}
+          showTimeFilters={false}
+        />
         <div className="userListActions">
           <NavLink to="/newUsers" className="link">
             <button className="addUserBtn">

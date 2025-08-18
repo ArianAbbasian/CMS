@@ -8,12 +8,13 @@ import {
   PermIdentity,
   Storefront,
   AttachMoney,
-  BarChart,
   MailOutline,
   DynamicFeed,
   MessageOutlined,
 
 } from "@mui/icons-material";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'; 
+import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import "./Sidebar.css";
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -32,10 +33,10 @@ export default function Sidebar({ isOpen, onClose }) {
       title: "Quick Menu",
       items: [
         { icon: <PermIdentity />, text: "Users", path: "/users" },
-        { icon: <PermIdentity />, text: "New User", path: "/newUsers" },
+        { icon: <PersonAddOutlinedIcon />, text: "New User", path: "/newUsers" },
         { icon: <Storefront />, text: "Products", path: "/products" },
+        { icon: <AddCircleOutlineIcon />, text: "New Product", path: "/newProduct" },
         { icon: <AttachMoney />, text: "Transactions", path: "/transactions" },
-        { icon: <BarChart />, text: "Reports", path: "/reports" }
       ]
     },
     {
