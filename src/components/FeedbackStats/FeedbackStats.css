@@ -1,0 +1,152 @@
+.FeedbackStats {
+  flex: 1;
+  margin-bottom: 25px;
+}
+
+.FeedbackStatsHeader {
+  margin-bottom: 25px;
+}
+
+.FeedbackStatsTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+}
+
+.FeedbackStatsSubtitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.FeedbackStatsCardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.FeedbackStatsCard {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+
+.FeedbackStatsCard:hover {
+  transform: translateY(-3px);
+}
+
+.FeedbackStatsCardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.FeedbackStatsCardMain {
+  flex: 1;
+}
+
+.FeedbackStatsCardValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.FeedbackStatsCardTitle {
+  font-size: 14px;
+  color: var(--secondary-text);
+  margin-bottom: 15px;
+}
+
+.FeedbackStatsChange {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.FeedbackStatsChange.positive {
+  color: #3bb077;
+  background-color: rgba(59, 176, 119, 0.1);
+}
+
+.FeedbackStatsChange.negative {
+  color: #d95087;
+  background-color: rgba(217, 80, 135, 0.1);
+}
+
+.FeedbackStatsIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 1200px) {
+  .FeedbackStatsCardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .FeedbackStatsCard {
+    padding: 20px;
+  }
+
+  .FeedbackStatsCardValue {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .FeedbackStatsCardContainer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .FeedbackStatsCard {
+    padding: 18px;
+  }
+
+  .FeedbackStatsTitle {
+    font-size: 18px;
+  }
+
+  .FeedbackStatsCardValue {
+    font-size: 22px;
+  }
+
+  .FeedbackStatsIconWrapper {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .FeedbackStatsHeader {
+    margin-bottom: 20px;
+  }
+
+  .FeedbackStatsCard {
+    padding: 15px;
+  }
+
+  .FeedbackStatsCardContent {
+    gap: 15px;
+  }
+
+  .FeedbackStatsIconWrapper {
+    align-self: flex-start;
+  }
+}

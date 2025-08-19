@@ -7,6 +7,7 @@ import Analytics from "./pages/Analytics/Analytics";
 import NewProduct from "./pages/newProduct/NewProduct"
 import Transactions from "./pages/Transactions/Transactions";
 import Automation from "./pages/automation/Automation";
+import FeedbackPage from './pages/feedback/FeedbackPage'
 import Mail from './pages/mail/Mail'
 let routes = [
   { path: "/", element: <Home /> },
@@ -19,6 +20,7 @@ let routes = [
   { path: "/newProduct", element: <NewProduct /> },
   { path: "/transActions", element: <Transactions /> },
   { path: "/mail", element: <Mail /> },
+  { path: "/feedback", element: <FeedbackPage /> },
 ];
 
 export default routes;

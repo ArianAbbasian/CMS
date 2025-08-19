@@ -9,7 +9,6 @@ import {
   AttachMoney,
   MailOutline,
   DynamicFeed,
-  MessageOutlined,
   AutoAwesome,
 } from "@mui/icons-material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -51,7 +50,6 @@ export default function Sidebar({ isOpen, onClose }) {
       items: [
         { icon: <MailOutline />, text: "Mail", path: "/mail" },
         { icon: <DynamicFeed />, text: "Feedback", path: "/feedback" },
-        { icon: <MessageOutlined />, text: "Messages", path: "/messages" },
       ],
     },
   ];

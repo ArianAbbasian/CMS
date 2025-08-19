@@ -1,3 +1,41 @@
+export const notificationsData = [
+  {
+    id: 1,
+    type: "order",
+    message: "New order #ORD-1234 placed by John Doe",
+    time: "2025-06-15T14:30:00",
+    unread: true,
+  },
+  {
+    id: 2,
+    type: "payment",
+    message: "Payment of $129.99 received for order #ORD-1234",
+    time: "2025-06-15T14:25:00",
+    unread: true,
+  },
+  {
+    id: 3,
+    type: "user",
+    message: "New user registration: Jane Smith",
+    time: "2025-06-15T13:45:00",
+    unread: false,
+  },
+  {
+    id: 4,
+    type: "success",
+    message: "Product inventory updated successfully",
+    time: "2025-06-15T12:30:00",
+    unread: false,
+  },
+  {
+    id: 5,
+    type: "warning",
+    message: "Low stock alert: iPhone 13 Pro (Only 5 left)",
+    time: "2025-06-15T10:15:00",
+    unread: false,
+  },
+];
+
 let xAxisData = [
   {
     name: "Jan",
@@ -729,7 +767,7 @@ export const automationTemplates = [
     trigger: "Abandoned cart",
     actions: ["Send email", "Send 10% discount code"],
     icon: "ShoppingCart",
-    color: "#3a7bd5"
+    color: "#3a7bd5",
   },
   {
     id: 2,
@@ -738,7 +776,7 @@ export const automationTemplates = [
     trigger: "User registration",
     actions: ["Send email", "Add to mailing list"],
     icon: "PersonAdd",
-    color: "#00b09b"
+    color: "#00b09b",
   },
   {
     id: 3,
@@ -747,8 +785,8 @@ export const automationTemplates = [
     trigger: "Inventory level",
     actions: ["Send notification", "Create purchase order"],
     icon: "Inventory",
-    color: "#ff5e62"
-  }
+    color: "#ff5e62",
+  },
 ];
 
 // ایمیل‌ها
@@ -762,7 +800,7 @@ export const emails = [
     read: false,
     labels: ["important", "inbox"],
     starred: true,
-    hasAttachment: true
+    hasAttachment: true,
   },
   {
     id: 2,
@@ -773,15 +811,15 @@ export const emails = [
     read: true,
     labels: ["newsletter"],
     starred: false,
-    hasAttachment: false
-  }
+    hasAttachment: false,
+  },
 ];
 
 // برچسب‌ها
 export const emailLabels = [
   { id: 1, name: "inbox", color: "#3a7bd5" },
   { id: 2, name: "important", color: "#ff5e62" },
-  { id: 3, name: "personal", color: "#00b09b" }
+  { id: 3, name: "personal", color: "#00b09b" },
 ];
 
 // قالب‌های پاسخ خودکار
@@ -790,6 +828,173 @@ export const autoReplies = [
     id: 1,
     name: "Out of Office",
     subject: "Auto: Away from office",
-    body: "I'm currently out of office..."
-  }
+    body: "I'm currently out of office...",
+  },
 ];
+
+export const feedbackStatsData = [
+  {
+    id: 1,
+    title: "Total Comments",
+    value: "2,845",
+    change: "+12.4%",
+    icon: "Comment",
+    color: "#3a7bd5",
+  },
+  {
+    id: 2,
+    title: "Pending Review",
+    value: "324",
+    change: "+8.2%",
+    icon: "Schedule",
+    color: "#ff9800",
+  },
+  {
+    id: 3,
+    title: "Approved",
+    value: "2,450",
+    change: "+5.3%",
+    icon: "CheckCircle",
+    color: "#4caf50",
+  },
+  {
+    id: 4,
+    title: "Spam",
+    value: "71",
+    change: "-3.7%",
+    icon: "Report",
+    color: "#f44336",
+  },
+];
+
+// داده‌های جدول نظرات
+export const feedbackTableData = [
+  {
+    id: 1,
+    user: {
+      name: "John Doe",
+      avatar: "images/qadir.jpg",
+      email: "john@example.com",
+    },
+    comment: "This is a great article! Very informative...",
+    post: "Getting Started with React",
+    postId: 101,
+    date: "2025-06-15 14:30",
+    status: "approved",
+    rating: 5,
+  },
+  {
+    id: 2,
+    user: {
+      name: "Jane Smith",
+      avatar: "images/amin.jpg",
+      email: "jane@example.com",
+    },
+    comment: "I have a question about section 3...",
+    post: "Advanced CSS Techniques",
+    postId: 102,
+    date: "2025-06-14 09:15",
+    status: "pending",
+    rating: 4,
+  },
+  {
+    id: 3,
+    user: {
+      name: "Robert Johnson",
+      avatar: "images/mmd.jpg",
+      email: "robert@example.com",
+    },
+    comment: "SPAM: Check out my website for cheap...",
+    post: "JavaScript Best Practices",
+    postId: 103,
+    date: "2025-06-13 16:45",
+    status: "spam",
+    rating: 1,
+  },
+  {
+    id: 4,
+    user: {
+      name: "Emily Davis",
+      avatar: "images/sasan.jpg",
+      email: "emily@example.com",
+    },
+    comment: "Thanks for sharing this valuable information!",
+    post: "Node.js Fundamentals",
+    postId: 104,
+    date: "2025-06-12 11:20",
+    status: "approved",
+    rating: 5,
+  },
+];
+
+// آپشن‌های فیلتر
+export const filterOptions = {
+  status: [
+    { value: "all", label: "All Status" },
+    { value: "approved", label: "Approved" },
+    { value: "pending", label: "Pending" },
+    { value: "spam", label: "Spam" },
+    { value: "rejected", label: "Rejected" },
+  ],
+  date: [
+    { value: "all", label: "All Time" },
+    { value: "today", label: "Today" },
+    { value: "week", label: "This Week" },
+    { value: "month", label: "This Month" },
+    { value: "year", label: "This Year" },
+  ],
+  rating: [
+    { value: "all", label: "All Ratings" },
+    { value: "5", label: "5 Stars" },
+    { value: "4", label: "4 Stars" },
+    { value: "3", label: "3 Stars" },
+    { value: "2", label: "2 Stars" },
+    { value: "1", label: "1 Star" },
+  ],
+};
+
+// ساختار داده‌ای برای پنل جزئیات
+export const initialFeedbackDetail = {
+  id: null,
+  user: {
+    name: "",
+    avatar: "",
+    email: "",
+    joinDate: "",
+  },
+  comment: "",
+  post: {
+    title: "",
+    id: null,
+    url: "",
+  },
+  date: "",
+  status: "pending",
+  rating: 0,
+  replies: [],
+};
+
+// داده‌های نمودارها
+export const feedbackChartsData = {
+  timeline: [
+    { month: "Jan", comments: 120, approved: 80, pending: 30, spam: 10 },
+    { month: "Feb", comments: 180, approved: 120, pending: 40, spam: 20 },
+    { month: "Mar", comments: 150, approved: 100, pending: 35, spam: 15 },
+    { month: "Apr", comments: 220, approved: 180, pending: 25, spam: 15 },
+    { month: "May", comments: 280, approved: 230, pending: 30, spam: 20 },
+    { month: "Jun", comments: 340, approved: 280, pending: 40, spam: 20 },
+  ],
+  statusDistribution: [
+    { name: "Approved", value: 65, color: "#4caf50" },
+    { name: "Pending", value: 20, color: "#ff9800" },
+    { name: "Spam", value: 10, color: "#f44336" },
+    { name: "Rejected", value: 5, color: "#9c27b0" },
+  ],
+  ratingDistribution: [
+    { rating: 5, count: 120, percentage: 60 },
+    { rating: 4, count: 50, percentage: 25 },
+    { rating: 3, count: 20, percentage: 10 },
+    { rating: 2, count: 6, percentage: 3 },
+    { rating: 1, count: 4, percentage: 2 },
+  ],
+};

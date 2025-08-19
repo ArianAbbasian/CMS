@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { products as initialProducts } from "../../datas";
 import { Link } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import {
   DeleteOutline,
   Search,
@@ -27,15 +27,12 @@ export default function Products() {
     pageSize: 5,
   });
 
-  // استفاده از state برای مدیریت محصولات
   const [productsData, setProductsData] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    // شبیه‌سازی بارگذاری داده
     setIsLoading(true);
     const timer = setTimeout(() => {
-      // ایجاد کپی از محصولات اولیه برای امکان تغییر
       const productsCopy = [...initialProducts];
       setProductsData(productsCopy);
       setFilteredProducts(productsCopy);
@@ -59,7 +56,6 @@ export default function Products() {
   }, [searchTerm, productsData]);
 
   const productDelete = (productID) => {
-    // به‌روزرسانی هر دو state
     const updatedProducts = productsData.filter(
       (product) => product.id !== productID
     );
@@ -234,11 +230,11 @@ export default function Products() {
     <div className={`productsPage ${isDarkMode ? "dark" : "light"}`}>
       <div className="productsHeader">
         <PageHeader
-        title="Product Management"
-        description="Manage your product inventory and listings"
-        descriptionIcon={<ShoppingBagIcon className="description-icon" />}
-        showTimeFilters={false}
-      />
+          title="Product Management"
+          description="Manage your product inventory and listings"
+          descriptionIcon={<ShoppingBagIcon className="description-icon" />}
+          showTimeFilters={false}
+        />
         <div className="productsActions">
           <Link to="/newProduct" className="link">
             <button className="addProductBtn">
@@ -308,11 +304,10 @@ export default function Products() {
             autoHeight
             rowCount={filteredProducts.length}
             sx={{
-              // حذف outline هنگام فوکوس
               "& .MuiDataGrid-cell:focus, & .MuiDataGrid-cell:focus-within": {
                 outline: "none !important",
               },
-              // استایل‌های اسکرول‌بار
+
               "& .MuiDataGrid-virtualScroller::-webkit-scrollbar": {
                 width: "8px",
                 height: "8px",
@@ -321,7 +316,7 @@ export default function Products() {
                 backgroundColor: isDarkMode ? "#555" : "#ccc",
                 borderRadius: "4px",
               },
-              // جلوگیری از انتخاب متن در سلول‌ها
+
               "& .MuiDataGrid-cell": {
                 userSelect: "none",
               },
