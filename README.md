@@ -44,6 +44,19 @@ It provides a professional UI, interactive charts, and modular components, makin
 
 ---
 
+## ✨ Key Features
+
+-   📊 **Interactive Dashboard** with real-time charts
+-   👥 **User Management** (Create, Edit, Delete)
+-   🏷️ **Product Management** with Drag & Drop capability
+-   💰 **Transactions System** with financial reporting
+-   🤖 **Automation Hub** for process automation
+-   🔔 **Notification System** (Mail & Feedback)
+-   🌙 **Dark/Light Mode** with persistent theme settings
+-   📱 **Fully Responsive Design** for all devices
+
+---
+
 ## 🛠️ How to Run
 
 ### Clone the repository
