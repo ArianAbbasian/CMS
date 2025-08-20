@@ -21,7 +21,7 @@ export default function Analytics() {
         showTimeFilters={true}
       />
 
-      {/* کارت‌های خلاصه */}
+      {/* Summart Cardds*/}
       <div className="analytics-summary-cards">
         <SummaryCard
           title="Total Sales"
@@ -49,7 +49,7 @@ export default function Analytics() {
         />
       </div>
 
-      {/* چارت‌ها */}
+      {/* Charts */}
       <div className="analytics-charts">
         <div className="chart-item">
           <GeographyChart />
@@ -59,7 +59,7 @@ export default function Analytics() {
         </div>
       </div>
 
-      {/* ویجت‌ها */}
+      {/* Widgets */}
       <div className="analytics-widgets">
         <div className="main-widgets">
           <div className="widget-content">

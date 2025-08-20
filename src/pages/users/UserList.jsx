@@ -27,7 +27,7 @@ export default function UserList() {
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
-      // Simulate API call
+      // Simulate Fake API call
       await new Promise((resolve) => setTimeout(resolve, 800));
       setUserDatas(userRows);
       setFilteredUsers(userRows);

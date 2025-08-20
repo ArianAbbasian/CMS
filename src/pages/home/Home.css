@@ -7,8 +7,8 @@
 }
 
 .home > * {
-  width: 100%; /* اطمینان از عرض کامل برای همه فرزندان */
-  box-sizing: border-box; /* شامل padding و border در محاسبه عرض */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .homeWidgets {
@@ -17,27 +17,28 @@
   gap: 25px;
 }
 
-/* استایل‌های عمومی برای کارت‌ها */
-.features, .chart, .widgetSm, .widgetLg {
+.features,
+.chart,
+.widgetSm,
+.widgetLg {
   border-radius: 16px;
   box-shadow: var(--box-shadow);
   background-color: var(--secondary-bg);
   transition: all 0.3s ease;
   padding: 20px;
-  width: 100%; /* اضافه شده */
-  max-width: 100%; /* اضافه شده */
-  overflow: hidden; /* اضافه شده */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-/* واکنش‌گرایی */
 @media (min-width: 992px) {
   .homeWidgets {
     flex-direction: row;
   }
-  
+
   .homeWidgets > * {
     flex: 1;
-    min-width: 0; /* رفع مشکل overflow در flex items */
+    min-width: 0;
   }
 }
 
@@ -46,8 +47,11 @@
     padding: 15px;
     gap: 20px;
   }
-  
-  .features, .chart, .widgetSm, .widgetLg {
+
+  .features,
+  .chart,
+  .widgetSm,
+  .widgetLg {
     padding: 15px;
   }
 }
@@ -57,8 +61,11 @@
     padding: 10px;
     gap: 15px;
   }
-  
-  .features, .chart, .widgetSm, .widgetLg {
+
+  .features,
+  .chart,
+  .widgetSm,
+  .widgetLg {
     padding: 15px;
   }
 }

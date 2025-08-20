@@ -119,7 +119,7 @@
   color: var(--primary-text);
 }
 
-/* واکنش‌گرایی */
+/* Resposive */
 @media (max-width: 992px) {
   .InventoryAlert {
     padding: 20px;

@@ -25,7 +25,7 @@ const FeedbackPage = () => {
 
   const handleAction = (action, feedback) => {
     console.log(`${action} action on feedback:`, feedback);
-    // Implement action logic here
+
   };
 
   const handleSearch = (searchTerm) => {

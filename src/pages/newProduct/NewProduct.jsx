@@ -47,7 +47,6 @@ export default function NewProduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Product submitted:", formData);
-    // منطق ارسال به سرور
   };
 
   const navigate = useNavigate();
@@ -71,7 +70,7 @@ export default function NewProduct() {
 
       <div className="formContainer">
         <form onSubmit={handleSubmit} className="productForm">
-          {/* بخش اطلاعات محصول */}
+          {/* Product Infos */}
           <div className="formSection">
             <h3 className="sectionTitle">
               <Description className="icon" />
@@ -149,7 +148,7 @@ export default function NewProduct() {
             </div>
           </div>
 
-          {/* بخش آپلود تصویر */}
+          {/* Upload Image */}
           <div className="imageUploadSection">
             <h3 className="sectionTitle">
               <CloudUpload className="icon" />
@@ -181,7 +180,7 @@ export default function NewProduct() {
             </div>
           </div>
 
-          {/* دکمه‌های اقدام */}
+          {/* ACtion Button */}
           <div className="actionButtons">
             <Link to="/products" className="cancelButton">
               Cancel

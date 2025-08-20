@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Topbar.css";
 import { Notifications, Language, Menu, Close } from "@mui/icons-material";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -10,10 +10,21 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }) {
   const { isDarkMode, toggleTheme } = useTheme();
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [notifications, setNotifications] = useState(notificationsData);
+  const [showThemeTooltip, setShowThemeTooltip] = useState(false);
+
+  useEffect(() => {
+    const hasSeenTooltip = localStorage.getItem("hasSeenThemeTooltip");
+    if (!hasSeenTooltip) {
+      const timer = setTimeout(() => {
+        setShowThemeTooltip(true);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleNotificationClick = () => {
     setIsNotificationOpen(!isNotificationOpen);
-    // Mark all as read when opening
     if (!isNotificationOpen) {
       setNotifications(
         notifications.map((notif) => ({
@@ -21,6 +32,14 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }) {
           unread: false,
         }))
       );
+    }
+  };
+
+  const handleThemeToggle = () => {
+    toggleTheme();
+
+    if (showThemeTooltip) {
+      setShowThemeTooltip(false);
     }
   };
 
@@ -52,11 +71,21 @@ export default function TopBar({ sidebarOpen, setSidebarOpen }) {
             <div className="topbarIconContainer">
               <Language fontSize="small" />
             </div>
-            <div className="topbarIconContainer" onClick={toggleTheme}>
+            <div
+              className="topbarIconContainer theme-toggle-container"
+              onClick={handleThemeToggle}
+            >
               {isDarkMode ? (
                 <Brightness7 fontSize="small" />
               ) : (
                 <Brightness4 fontSize="small" />
+              )}
+
+              {showThemeTooltip && (
+                <div className="theme-tooltip">
+                  <div className="tooltip-arrow"></div>
+                  Toggle dark mode
+                </div>
               )}
             </div>
             <img

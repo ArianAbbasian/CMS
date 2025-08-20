@@ -2,7 +2,7 @@ import React from "react";
 import "./FeedbackStats.css"; 
 
 const FeedbackStats = ({ data }) => {
-  // تابع برای رندر آیکون بر اساس نام
+  // Icon Render Functionn
   const renderIcon = (iconName, color) => {
     const iconMap = {
       Comment: "💬",

@@ -161,7 +161,7 @@
   box-shadow: 0 4px 12px rgba(var(--accent-color), 0.3);
 }
 
-/* واکنش‌گرایی */
+/* Responsiveeeeee */
 @media (max-width: 992px) {
   .newUserForm {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

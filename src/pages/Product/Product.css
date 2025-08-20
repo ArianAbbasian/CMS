@@ -264,7 +264,7 @@
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
 }
 
-/* واکنش‌گرایی */
+/* Responsive */
 @media (max-width: 1200px) {
   .productForm {
     grid-template-columns: 1fr;

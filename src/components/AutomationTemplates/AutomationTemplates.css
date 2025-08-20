@@ -143,10 +143,10 @@
 }
 
 .UseTemplateButton:hover {
-  scale: 1.1;
+  transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 1200px) {
   .TemplatesGrid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -157,7 +157,7 @@
   .TemplatesContainer {
     padding: 20px;
   }
-  
+
   .TemplateCard {
     padding: 15px;
   }
@@ -167,11 +167,11 @@
   .TemplatesGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .TemplatesHeader {
     margin-bottom: 20px;
   }
-  
+
   .TemplatesTitle {
     font-size: 18px;
   }

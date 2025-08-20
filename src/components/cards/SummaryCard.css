@@ -1,14 +1,13 @@
-/* src/components/cards/SummaryCard.css */
 .statCard {
   padding: 20px;
-  border-radius: 16px !important; /* افزایش شعاع گوشه‌ها */
+  border-radius: 16px !important;
   display: flex;
   align-items: center;
   gap: 16px;
   background-color: var(--light-background-paper);
   border: 1px solid var(--light-grey-300);
-  box-shadow: none;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* انیمیشن نرم‌تر */
+  box-shadow: var(--box-shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   height: 100%;
   cursor: pointer;
   overflow: hidden;
@@ -21,38 +20,41 @@
 }
 
 .statCard::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 [data-theme="dark"] .statCard::before {
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .statCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .statCard:hover::before {
   opacity: 1;
 }
 
-[data-theme="dark"] .statCard:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
 .statIcon {
   width: 56px;
   height: 56px;
-  border-radius: 14px !important; 
+  border-radius: 14px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +65,6 @@
   transform: scale(1.05);
 }
 
-/* رنگ‌بندی آیکون‌ها */
 .statIcon.AttachMoney {
   background-color: rgba(16, 185, 129, 0.1);
   color: #10b981;

@@ -68,8 +68,8 @@ export default function NewUser() {
           <ArrowBack />
         </button>
         <PageHeader
-        title="Analytics Dashboard"
-        description="Business performance overview"
+        title="Add New User"
+        description="Create user accounts"
         descriptionIcon={<PersonAdd className="description-icon" />}
         showTimeFilters={false}
       />

@@ -17,28 +17,26 @@ const PaymentMethodsChart = () => {
   const { isDarkMode } = useTheme();
   const { colors, text, tooltipBg } = isDarkMode ? paymentColors.dark : paymentColors.light;
 
-  // کامپوننت سفارشی Tooltip
+  // --- Custom Tooltip for the pie chart ---
   const CustomTooltip = ({ active, payload }) => {
     if (!active || !payload || !payload.length) return null;
-    
+
     const data = payload[0].payload;
-    
+
     return (
       <div className="payment-tooltip">
         <Typography variant="subtitle2" style={{ marginBottom: 4 }}>
           {data.name} <small>({data.value}%)</small>
         </Typography>
-        <div style={{ 
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
-          <div style={{
-            width: '12px',
-            height: '12px',
-            backgroundColor: payload[0].color,
-            borderRadius: '2px'
-          }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div
+            style={{
+              width: '12px',
+              height: '12px',
+              backgroundColor: payload[0].color,
+              borderRadius: '2px'
+            }}
+          />
           <span>Market Share:</span>
           <strong>{data.value}%</strong>
         </div>
@@ -48,11 +46,13 @@ const PaymentMethodsChart = () => {
 
   return (
     <div className="payment-widget">
+      {/* --- Widget Header --- */}
       <div className="payment-widget-header">
         <h3 className="payment-widget-title">Payment Methods</h3>
         <span className="payment-widget-subtitle">Distribution by payment type</span>
       </div>
-      
+
+      {/* --- Pie Chart Container --- */}
       <div className="payment-chart-container">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -66,15 +66,17 @@ const PaymentMethodsChart = () => {
               dataKey="value"
               labelLine={false}
             >
+              {/* --- Pie segments with colors --- */}
               {paymentMethodsData.map((entry, index) => (
-                <Cell 
-                  key={`cell-${index}`} 
-                  fill={colors[index % colors.length]} 
+                <Cell
+                  key={`cell-${index}`}
+                  fill={colors[index % colors.length]}
                   stroke={isDarkMode ? '#2a3042' : '#fff'}
                   strokeWidth={2}
                 />
               ))}
-              
+
+              {/* --- Center label --- */}
               <Label
                 value="Payment"
                 position="center"
@@ -83,14 +85,18 @@ const PaymentMethodsChart = () => {
                 fontWeight={500}
               />
             </Pie>
-            <Tooltip 
+
+            {/* --- Tooltip --- */}
+            <Tooltip
               content={<CustomTooltip />}
               wrapperStyle={{
                 backgroundColor: tooltipBg,
                 borderColor: isDarkMode ? '#444' : '#eee'
               }}
             />
-            <Legend 
+
+            {/* --- Legend --- */}
+            <Legend
               layout="vertical"
               align="right"
               verticalAlign="middle"

@@ -1,3 +1,48 @@
+import {
+  LineStyle,
+  Timeline,
+  PermIdentity,
+  Storefront,
+  AttachMoney,
+  MailOutline,
+  DynamicFeed,
+  AutoAwesome,
+} from "@mui/icons-material";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
+
+export const menuItems = [
+  {
+    title: "Dashboard",
+    items: [
+      { icon: <LineStyle />, text: "Home", path: "/" },
+      { icon: <Timeline />, text: "Analytics", path: "/analytics" },
+      { icon: <AutoAwesome />, text: "Automation Hub", path: "/automation" },
+    ],
+  },
+  {
+    title: "Quick Menu",
+    items: [
+      { icon: <PermIdentity />, text: "Users", path: "/users" },
+      { icon: <PersonAddOutlinedIcon />, text: "New User", path: "/newUsers" },
+      { icon: <Storefront />, text: "Products", path: "/products" },
+      {
+        icon: <AddCircleOutlineIcon />,
+        text: "New Product",
+        path: "/newProduct",
+      },
+      { icon: <AttachMoney />, text: "Transactions", path: "/transActions" },
+    ],
+  },
+  {
+    title: "Notifications",
+    items: [
+      { icon: <MailOutline />, text: "Mail", path: "/mail" },
+      { icon: <DynamicFeed />, text: "Feedback", path: "/feedback" },
+    ],
+  },
+];
+
 export const notificationsData = [
   {
     id: 1,
@@ -233,8 +278,6 @@ const productsData = [
     sales: 5000,
   },
 ];
-
-// داده‌های خلاصه آماری (کارت‌های بالای صفحه)
 const summaryData = [
   {
     id: 1,
@@ -266,7 +309,6 @@ const summaryData = [
   },
 ];
 
-// داده‌های نمودار فروش
 const salesData = [
   { month: "Jan", sales: 11200, revenue: 24500 },
   { month: "Feb", sales: 9900, revenue: 22100 },
@@ -277,7 +319,6 @@ const salesData = [
   { month: "Jul", sales: 22400, revenue: 35600 },
 ];
 
-// داده‌های دسته‌بندی محصولات
 const categoryData = [
   { name: "Electronics", value: 35 },
   { name: "Computers", value: 25 },
@@ -286,7 +327,6 @@ const categoryData = [
   { name: "Other", value: 5 },
 ];
 
-// داده‌های جغرافیایی
 const geographyData = [
   { name: "North America", sales: 4000, revenue: 24000 },
   { name: "Europe", sales: 3000, revenue: 13980 },
@@ -296,7 +336,6 @@ const geographyData = [
   { name: "Oceania", sales: 1490, revenue: 8500 },
 ];
 
-// محصولات پرفروش
 const topProducts = [
   {
     id: 1,
@@ -340,7 +379,6 @@ const topProducts = [
   },
 ];
 
-// تراکنش‌های اخیر
 const recentTransactionsAnalytics = [
   {
     id: 1,
@@ -384,14 +422,12 @@ const recentTransactionsAnalytics = [
   },
 ];
 
-// اهداف ماهانه
 const monthlyGoals = [
   { id: 1, name: "Monthly Sales", progress: 75, target: 1200 },
   { id: 2, name: "Revenue Target", progress: 65, target: 25000 },
   { id: 3, name: "New Customers", progress: 45, target: 300 },
 ];
 
-// فعالیت‌های اخیر
 const recentActivities = [
   {
     id: 1,
@@ -435,7 +471,6 @@ const recentActivities = [
   },
 ];
 
-// هشدار موجودی
 export const lowStockProducts = [
   {
     id: 1,
@@ -463,7 +498,6 @@ export const lowStockProducts = [
   },
 ];
 
-// دسته‌بندی‌ها
 const categories = ["All", "Electronics", "Computers", "Home", "Fashion"];
 
 export const geographyChartData = [
@@ -537,7 +571,6 @@ export const trafficMeta = {
   updatedAt: "2025-06-15",
 };
 
-// صادر کردن همه داده‌ها
 export {
   xAxisData,
   newMembers,
@@ -585,8 +618,6 @@ export const progressGoals = [
     color: "#ff5e62",
   },
 ];
-
-// src/datas.js
 export const activityFeedData = [
   {
     id: 1,
@@ -788,8 +819,6 @@ export const automationTemplates = [
     color: "#ff5e62",
   },
 ];
-
-// ایمیل‌ها
 export const emails = [
   {
     id: 1,
@@ -814,15 +843,11 @@ export const emails = [
     hasAttachment: false,
   },
 ];
-
-// برچسب‌ها
 export const emailLabels = [
   { id: 1, name: "inbox", color: "#3a7bd5" },
   { id: 2, name: "important", color: "#ff5e62" },
   { id: 3, name: "personal", color: "#00b09b" },
 ];
-
-// قالب‌های پاسخ خودکار
 export const autoReplies = [
   {
     id: 1,
@@ -866,8 +891,6 @@ export const feedbackStatsData = [
     color: "#f44336",
   },
 ];
-
-// داده‌های جدول نظرات
 export const feedbackTableData = [
   {
     id: 1,
@@ -926,8 +949,6 @@ export const feedbackTableData = [
     rating: 5,
   },
 ];
-
-// آپشن‌های فیلتر
 export const filterOptions = {
   status: [
     { value: "all", label: "All Status" },
@@ -952,8 +973,6 @@ export const filterOptions = {
     { value: "1", label: "1 Star" },
   ],
 };
-
-// ساختار داده‌ای برای پنل جزئیات
 export const initialFeedbackDetail = {
   id: null,
   user: {
@@ -973,8 +992,6 @@ export const initialFeedbackDetail = {
   rating: 0,
   replies: [],
 };
-
-// داده‌های نمودارها
 export const feedbackChartsData = {
   timeline: [
     { month: "Jan", comments: 120, approved: 80, pending: 30, spam: 10 },

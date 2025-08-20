@@ -23,7 +23,7 @@
   --light-shadow-3: 0px 3px 5px rgba(0, 0, 0, 0.1);
   --light-shadow-4: 0px 4px 10px rgba(0, 0, 0, 0.15);
   --light-secondary-main: #9c27b0;
-   --warning-color: #ff9800;
+  --warning-color: #ff9800;
   --warning-bg: rgba(255, 152, 0, 0.1);
   --card-bg: var(--light-background-paper);
   --success-color: #3bb077;
@@ -60,9 +60,9 @@
   --warning-color: #ffb74d;
   --warning-bg: rgba(255, 183, 77, 0.2);
   --card-bg: var(--dark-grey-800);
-   --success-color: #4caf50;
+  --success-color: #4caf50;
   --error-color: #f44336;
-   --background-rgb: 18, 18, 18;
+  --background-rgb: 18, 18, 18;
 }
 
 body {

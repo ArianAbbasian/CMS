@@ -1,38 +1,43 @@
-
-import React from 'react';
-import { Card, Typography, Box } from '@mui/material';
+import React from "react";
+import { Card, Typography, Box } from "@mui/material";
 import {
   Store,
   AttachMoney,
   ShoppingCart,
   People,
-  TrendingUp
-} from '@mui/icons-material';
-import './SummaryCard.css';
+  TrendingUp,
+} from "@mui/icons-material";
+import "./SummaryCard.css";
 
-const iconComponents = {
-  AttachMoney: AttachMoney,
-  ShoppingCart: ShoppingCart,
-  People: People,
-  TrendingUp: TrendingUp,
-  Store: Store
+const ICONS = {
+  AttachMoney,
+  ShoppingCart,
+  People,
+  TrendingUp,
+  Store,
 };
 
 const SummaryCard = ({ title, value, change, icon }) => {
-  const IconComponent = iconComponents[icon];
-  const isPositive = change?.startsWith('+');
+  const Icon = ICONS[icon];
+  const isPositive = change?.startsWith("+");
 
   return (
     <Card className="statCard" elevation={0}>
+      {/* Icon Section */}
       <Box className={`statIcon ${icon}`}>
-        {IconComponent && <IconComponent fontSize="medium" />}
+        {Icon && <Icon fontSize="medium" />}
       </Box>
+
+      {/* Info Section */}
       <Box className="statInfo">
         <Typography className="statNumber">{value}</Typography>
         <Typography className="statLabel">{title}</Typography>
+
         {change && (
-          <Typography className={`statChange ${isPositive ? 'positive' : 'negative'}`}>
-            {isPositive ? '↑' : '↓'} {change.replace('+', '').replace('-', '')}
+          <Typography
+            className={`statChange ${isPositive ? "positive" : "negative"}`}
+          >
+            {isPositive ? "↑" : "↓"} {change.replace(/[+-]/, "")}
           </Typography>
         )}
       </Box>

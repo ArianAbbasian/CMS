@@ -127,7 +127,7 @@
   color: var(--primary-text);
 }
 
-/* واکنش‌گرایی */
+/* Responsive */
 @media (max-width: 992px) {
   .WidgetLg {
     padding: 20px;

@@ -1,4 +1,4 @@
-/* src/components/widgets/ProgressWidget.css */
+
 .ProgressWidget {
   flex: 1;
   padding: 25px;
@@ -115,7 +115,7 @@
   color: var(--primary-text);
 }
 
-/* واکنش‌گرایی */
+/* Responsive */
 @media (max-width: 768px) {
   .ProgressWidget {
     padding: 20px;

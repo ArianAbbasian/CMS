@@ -1,4 +1,4 @@
-/* Mail.css */
+
 .mail-page {
   padding: 20px;
   background-color: var(--secondary-bg);
@@ -24,7 +24,7 @@
   gap: 20px;
 }
 
-/* Responsive Design */
+/* Responsive  */
 @media (max-width: 1200px) {
   .mail-container {
     grid-template-columns: 240px 1fr;

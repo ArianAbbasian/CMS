@@ -21,7 +21,7 @@ export default function Transactions() {
       />
 
       <div className="transactionsContent">
-        {/* آمار کلی تراکنش‌ها */}
+        {/* TransAction Status */}
         <div className="statsGrid">
           <TransactionsStats
             title="Total Revenue"
@@ -56,12 +56,12 @@ export default function Transactions() {
           />
         </div>
 
-        {/* جدول تراکنش‌ها */}
+        {/* TransAction Table */}
         <div className="mainSection">
           <TopProductsWidget />
         </div>
 
-        {/* نمودارها */}
+        {/* Charts */}
         <div className="chartsSection">
           <RecentTransactionsChart />
           <PaymentMethodsChart />

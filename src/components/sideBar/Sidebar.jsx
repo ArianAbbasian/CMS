@@ -1,58 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
-import {
-  LineStyle,
-  Timeline,
-  PermIdentity,
-  Storefront,
-  AttachMoney,
-  MailOutline,
-  DynamicFeed,
-  AutoAwesome,
-} from "@mui/icons-material";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import "./Sidebar.css";
+import { menuItems } from "../../datas";
 
 export default function Sidebar({ isOpen, onClose }) {
   const { isDarkMode } = useTheme();
 
-  const menuItems = [
-    {
-      title: "Dashboard",
-      items: [
-        { icon: <LineStyle />, text: "Home", path: "/" },
-        { icon: <Timeline />, text: "Analytics", path: "/analytics" },
-        { icon: <AutoAwesome />, text: "Automation Hub", path: "/automation" },
-      ],
-    },
-    {
-      title: "Quick Menu",
-      items: [
-        { icon: <PermIdentity />, text: "Users", path: "/users" },
-        {
-          icon: <PersonAddOutlinedIcon />,
-          text: "New User",
-          path: "/newUsers",
-        },
-        { icon: <Storefront />, text: "Products", path: "/products" },
-        {
-          icon: <AddCircleOutlineIcon />,
-          text: "New Product",
-          path: "/newProduct",
-        },
-        { icon: <AttachMoney />, text: "Transactions", path: "/transActions" },
-      ],
-    },
-    {
-      title: "Notifications",
-      items: [
-        { icon: <MailOutline />, text: "Mail", path: "/mail" },
-        { icon: <DynamicFeed />, text: "Feedback", path: "/feedback" },
-      ],
-    },
-  ];
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <>

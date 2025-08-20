@@ -11,10 +11,10 @@ export default function Product() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // شبیه‌سازی دریافت داده از API
+    // API
     setLoading(true);
     const timer = setTimeout(() => {
-      const foundProduct = products.find(p => p.id.toString() === productID);
+      const foundProduct = products.find((p) => p.id.toString() === productID);
       setProduct(foundProduct);
       setLoading(false);
     }, 500);
@@ -63,7 +63,11 @@ export default function Product() {
 
       <div className="productTop">
         <div className="productTopLeft">
-          <Chart title="Sales Performance (Monthly)" data={productsData} dataKey="sales" />
+          <Chart
+            title="Sales Performance (Monthly)"
+            data={productsData}
+            dataKey="sales"
+          />
         </div>
 
         <div className="productTopRight">
@@ -87,19 +91,27 @@ export default function Product() {
             </div>
             <div className="productInfoItem">
               <div className="productInfoKey">Price</div>
-              <div className="productInfoValue">${product.price.toFixed(2)}</div>
+              <div className="productInfoValue">
+                ${product.price.toFixed(2)}
+              </div>
             </div>
             <div className="productInfoItem">
               <div className="productInfoKey">Total Sales</div>
-              <div className="productInfoValue">${(product.price * 120).toLocaleString()}</div>
+              <div className="productInfoValue">
+                ${(product.price * 120).toLocaleString()}
+              </div>
             </div>
             <div className="productInfoItem">
               <div className="productInfoKey">Status</div>
-              <div className="productInfoValue" data-status="yes">Active</div>
+              <div className="productInfoValue" data-status="yes">
+                Active
+              </div>
             </div>
             <div className="productInfoItem">
               <div className="productInfoKey">Stock</div>
-              <div className="productInfoValue" data-status="yes">In Stock</div>
+              <div className="productInfoValue" data-status="yes">
+                In Stock
+              </div>
             </div>
             <div className="productInfoItem">
               <div className="productInfoKey">Category</div>
@@ -117,19 +129,19 @@ export default function Product() {
         <form className="productForm">
           <div className="productFormLeft">
             <label htmlFor="productName">Product Name</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               id="productName"
               defaultValue={product.title}
-              placeholder="Product name" 
+              placeholder="Product name"
             />
 
             <label htmlFor="productPrice">Price ($)</label>
-            <input 
-              type="number" 
+            <input
+              type="number"
               id="productPrice"
               defaultValue={product.price}
-              placeholder="0.00" 
+              placeholder="0.00"
             />
 
             <label htmlFor="productCategory">Category</label>
@@ -173,7 +185,11 @@ export default function Product() {
                 <PublishIcon />
                 Change Image
               </label>
-              <input type="file" id="productImage" style={{ display: "none" }} />
+              <input
+                type="file"
+                id="productImage"
+                style={{ display: "none" }}
+              />
             </div>
 
             <div className="productActions">

@@ -9,7 +9,7 @@ const TopProductsWidget = () => {
   const [topProductsData, setTopProductsData] = useState([]);
 
   useEffect(() => {
-    // شبیه‌سازی تاخیر لودینگ
+    // Loading Similation
     const timer = setTimeout(() => {
       const data = products
         .map((product) => ({
@@ -50,7 +50,7 @@ const TopProductsWidget = () => {
         </thead>
         <tbody className="TopProductsTableBody">
           {isLoading
-            ? // 🔹 اسکلتون لودینگ
+            ? // 🔹 Sceleton Loadinggggggg
               Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i}>
                   <td className="TopProductsTableCell">
@@ -70,7 +70,7 @@ const TopProductsWidget = () => {
                   </td>
                 </tr>
               ))
-            : // 🔹 دیتا واقعی
+            : // 🔹 DATA
               topProductsData.map((product) => {
                 const isPositive = product.change.startsWith('+');
                 return (

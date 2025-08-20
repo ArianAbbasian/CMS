@@ -244,7 +244,7 @@
   width: 100%;
 }
 
-.productEdit, 
+.productEdit,
 .productDelete {
   display: flex;
   align-items: center;
@@ -274,7 +274,8 @@
   background-color: rgba(244, 67, 54, 0.15);
 }
 
-.noRowsOverlay, .loadingOverlay {
+.noRowsOverlay,
+.loadingOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -309,15 +310,19 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1200px) {
   .dataGridContainer {
     overflow-x: auto;
   }
-  
+
   .MuiDataGrid-root {
     min-width: 900px;
   }
@@ -329,11 +334,11 @@
     align-items: flex-start;
     gap: 15px;
   }
-  
+
   .productsFilters {
     flex-direction: column;
   }
-  
+
   .searchContainer {
     max-width: 100%;
   }
@@ -343,19 +348,19 @@
   .productsPage {
     padding: 15px;
   }
-  
+
   .productsStats {
     grid-template-columns: 1fr;
   }
-  
+
   .MuiDataGrid-root {
     min-width: 800px;
   }
-  
+
   .statCard {
     gap: 15px;
   }
-  
+
   .statIcon {
     width: 50px;
     height: 50px;
@@ -367,30 +372,29 @@
   .MuiDataGrid-root {
     min-width: 700px;
   }
-  
+
   .addProductBtn span,
   .filterBtn span {
     display: none;
   }
-  
+
   .addProductBtn,
   .filterBtn {
     padding: 10px;
     border-radius: 12px;
   }
-  
+
   .actionCell {
     gap: 5px;
   }
-  
-  .productEdit, 
+
+  .productEdit,
   .productDelete {
     width: 32px;
     height: 32px;
   }
 }
 
-/* رفع مشکل انتخاب سطر */
 .MuiDataGrid-row {
   pointer-events: none;
 }
